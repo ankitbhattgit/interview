@@ -1,0 +1,1490 @@
+
+What is the latest current version of PHP?
+PHP 7 released but stable is 5.6
+
+2. Who is the Father of PHP?
+--> Rasmus Lerdorf
+
+2) What does the initials of PHP stand for?
+
+PHP means PHP: Hypertext Preprocessor.
+
+
+PHP 5 features?
+
+ Some of them are as following.
+In PHP5, you have to name your constructors.
+In PHP5, Class can be declared as Abstract.
+PHP5 introduced a special function which is __autoload().
+In PHP5, Class or method can be declared as Final.
+In PHP5, Magic methods are introduced such as __call, __get, __set and __toString.
+In PHP5, 'exceptions'(exception errors) has introduced.
+In PHP5, interfaces are introduced.
+PHP5 introduces a new MySQL extension named MySQLi
+1. Namespaces.
+2. XMLReader.
+3. XMLWriter.
+4. goto, this directive comes from the Basic langage.
+5. Closures.
+6. Filefinfo eExtension, to access the file system.
+7. Phar. Allows to embedd a PHP application into a single executable file, as does Java with .jar files.
+
+Variadic functions and argument unpacking using the ... operator.
+Function and constant importing with the use keyword.
+File uploads larger than 2 gigabytes in size are now accepted.
+
+The main features of PHP 7 include:
+
+PHP 7 IS 2X FASTER
+
+Spaceship operator
+
+The spaceship operator is used for comparing two expressions. It returns -1, 0 or 1 when $a is respectively less than, equal to, or greater than $b
+
+
+Constant arrays using define()
+
+<?php
+define('ANIMALS', [
+    'dog',
+    'cat',
+    'bird'
+]);
+
+
+Anonymous classes
+
+
+Session options ¶
+
+session_start() now accepts an array of options that override the session configuration directives normally set in php.ini.
+
+ Describe how PHP Works with Browser?
+Works in following Flow
+1. Open website http://www.web-technology-experts-notes.in/
+2. Request send to server of http://www.web-technology-experts-notes.in/
+3. Call PHP Files.
+4. PHP Scripts are loaded into memory and compiled into Zend opcode.
+5. These opcodes are executed and the HTML generated.
+6. Same HTML is send back to Browser.
+
+
+Question: What are important things about php functions?
+PHP function start with "function function-name()".
+PHP Function name must be start with character and it accept alphanumeric and _.
+In build functions are case in-sensitive.
+User build functions are case sensitive.
+We can pass upto 64 parameter as argument.
+Anonymous function are user defined function which have "no-name" and also called closures.
+
+
+What does a special set of tags <?= and ?> do in PHP?
+The output is displayed directly to the browser.
+
+
+What’s the difference between include and require?
+If the file is not found by require(), it will cause a fatal error and halt the execution of the script. If the file is not found by include(), a warning will be issued, but execution will continue.
+
+
+require_once(), require(), include().What is difference between them?
+require() includes and evaluates a specific file, while require_once() does that only if it has not been included before (on the same page). So, require_once() is recommended to use when you want to include a file where you have a lot of functions for example. This way you make sure you don't include the file more times and you will not get the "function re-declared" error.
+
+
+I am trying to assign a variable the value of 0123, but it keeps coming up with a different number, what’s the problem?
+PHP Interpreter treats numbers beginning with 0 as octal.
+
+
+How do you define a constant?
+Via define() directive, like define (“MYCONSTANT”, 100);
+
+
+How do you pass a variable by value?
+Just like in C++, put an ampersand in front of it, like $a = &$b
+
+
+Will comparison of string “10″ and integer 11 work in PHP?
+Yes, internally PHP will cast everything to the integer type, so numbers 10 and 11 will be compared.
+
+
+Explain the ternary conditional operator in PHP?
+Expression preceding the ? is evaluated, if it’s true, then the expression preceding the : is executed, otherwise, the expression following : is executed.
+
+
+How do I find out the number of parameters passed into function?
+func_num_args() function returns the number of parameters passed in.
+
+
+What’s the special meaning of __sleep and __wakeup?
+__sleep returns the array of all the variables than need to be saved, while __wakeup retrieves them.
+
+
+Why doesn’t the following code print the newline properly?
+<?php
+$str = ‘Hello, there.nHow are you?nThanks for visiting Us’;
+print $str;
+?>
+Because inside the single quotes the n character is not interpreted as newline, just as a sequence of two characters – and n.
+
+
+Would you initialize your strings with single quotes or double quotes?
+Since the data inside the single-quoted string is not parsed for variable substitution, it’s always a better idea speed-wise to initialize a string with single quotes, unless you specifically need variable substitution.
+
+
+How come the code <?php print “Contents: $arr[1]“; ?> works, but <?php print “Contents: $arr[1][2]“; ?> doesn’t for two-dimensional array of mine?
+Any time you have an array with more than one dimension, complex parsing syntax is required. print “Contents: {$arr[1][2]}” would’ve worked. /> - Yes.
+
+
+What is the difference between characters �23 and x23?
+The first one is octal 23, the second is hex 23.
+
+
+1. In PHP, what are magic methods and how are they used?
+
+PHP functions that start with a double underscore – a “__” – are called magic functions (and/or methods) in PHP. They are functions that are always defined inside classes, and are not stand-alone (outside of classes) functions. The magic functions available in PHP are: __construct(), __destruct(), __call(), __callStatic(), __get(), __set(), __isset(), __unset(), __sleep(), __wakeup(), __toString(), __invoke(), __set_state(), __clone(), and __autoload().
+
+
+
+What’s the difference between an application server and a web server?
+
+As the name implies, an application server hosts instances of a specific application, but provides a great deal of other functionality as well. This is because application servers provide building blocks (sometimes called components) that, when assembled, help create the application itself. An example of a component would be enterprise java beans, which are the main component used by J2EE application servers.
+
+A Web server hosts web pages that can be seen in a Web browser. A Web server exclusively handles HTTP requests, and always responds using HTTP as well. This is in contrast to an application server, which can use protocols other than HTTP. In order to process a request for a web page, a Web server can do a number of things depending on the nature of the request: reply with a static HTML page, delegate the dynamic response generation to another appropriate program, such as server side scripts (like CGI), servlets, etc. The server-side technology varies, but the goal of such technologies is to generate a response, usually in HTML, to be viewed in a Web browser. When the Web server receives a request, it will pass the request to the server side program that it thinks is most suited to handle the request.
+
+
+
+
+
+
+What are the differences between GET and POST methods in form submitting?
+On the server side, the main difference between GET and POST is where the submitted is stored. The $_GET array stores data submitted by the GET method. The $_POST array stores data submitted by the POST method.
+On the browser side, the difference is that data submitted by the GET method will be displayed in the browser’s address field. Data submitted by the POST method will not be displayed anywhere on the browser.
+GET method is mostly used for submitting a small amount and less sensitive data.
+POST method is mostly used for submitting a large amount or sensitive data.
+We can send 1024 bytes using GET method but POST method can transfer large amount of data and POST is the secure method than GET method .
+
+
+
+
+In HTML forms, what’s the difference between using the GET method versus POST?
+
+ Think of HTTP as the language that your web browser uses to ‘speak’ with web servers. The type of HTTP request generated depends on the method used to submit the form (either a GET or a POST).
+
+If a "GET" request is used, the form parameters are encoded in the URL in what is called a query string.
+
+A POST request, unlike a GET request, passes the form parameters in the body of the HTTP request, not in the URL. This happens behind the scenes, in what can be thought of as an HTTP ‘dialogue’ between your web browser and a webserver.
+
+However, the main difference between GET and POST requests is that GET requests are meant to be (although not always are, because this depends on the programmer of the form) idempotent. What idempotent means is that one GET request for a particular URL, including the form parameters, is the same as 2 or more requests for that URL. This is because the response page is always the same. So, your web browser can usually cache the response pages for GET requests, because they should not change. POST requests, however, are not meant to be idempotent. This means that they cannot be cached, and the server is recontacted each time the page is displayed. POST requests are most suitable for queries where the response page will change over time – like a shopping cart.
+
+ You could use a GET request to do pretty much the same thing as a POST query. It’s just that browsers are generally coded to expect that POST requests will be used for things that will cause changes – like placing an order, or writing to a database, etc . GET requests should be used for pure queries that don’t affect anything on the server. So, one should always remember not to use GET requests for any action that would cause a change on the server.Also for bookmarking purpose we will prefer get method.
+
+
+
+How to declare an array in php?
+Eg : var $arr = array('apple', 'grape', 'lemon');
+
+
+Explain the different types of errors in PHP.
+Notices, Warnings and Fatal errors are the types of errors in PHP
+
+Notices:
+Notices represents non-critical errors, i.e. accessing a variable that has not yet been defined. By default, such errors are not displayed to the user at all but whenever required, you can change this default behavior.
+Warnings:
+Warnings are more serious errors but they do not result in script termination. i.e calling include() a file which does not exist. By default, these errors are displayed to the user.
+Fatal errors:
+Fatal errors are critical errors i.e. calling a non-existent function or class. These errors cause the immediate termination of the script.
+
+
+
+
+How to find current date and time?
+The date() function provides you with a means of retrieving the current date and time, applying the format integer parameters indicated in your script to the timestamp provided or the current local time if no timestamp is given. In simplified terms, passing a time parameter is optional - if you don't, the current timestamp will be used. Where as time function returns current Unix timestamp.
+
+How can we get second of the current time using date function?
+$second = date("s");
+
+
+How to increase the execution time of a php script?
+To Change max_execution_time variable in php.ini file .By Default time is 30 seconds.
+The file path is xampp/php/php.ini if xampp software is using.
+
+
+What is meant by nl2br()?
+Inserts HTML line breaks () before all newlines in a string.
+
+
+How can we know the total number of elements of Array?
+sizeof($array_var)
+count($array_var)
+If we just pass a simple var instead of a an array it will return 1.
+
+
+
+What is the difference between the functions unlink and unset?
+unlink() deletes the given file from the file system.
+unset() makes a variable undefined.
+
+
+
+How can we set and destroy the cookie in php?
+By using setcookie(name, value, expire, path, domain); function we can set the cookie in php ;
+Set the cookies in past for destroy. like
+setcookie("user", "sonia", time()+3600); for set the cookie
+setcookie("user", "", time()-3600); for destroy or delete the cookies;
+
+
+What is use of in_array() function in php ?
+in_array used to checks if a value exists in an array
+
+
+What is the difference between Session and Cookie?
+The main difference between sessions and cookies is that sessions are stored on the server, and cookies are stored on the user’s computers in the text file format. Cookies can not hold multiple variables,But Session can hold multiple variables.We can set expiry for a cookie,The session only remains active as long as the browser is open.Users do not have access to the data you stored in Session,Since it is stored in the server.Session is mainly used for login/logout purpose while cookies using for user activity tracking
+
+
+How to create a session? How to set a value in session ? How to Remove data from a session?
+Create session : session_start();
+Set value into session : $_SESSION['USER_ID']=1;
+Remove data from a session : unset($_SESSION['USER_ID'];
+
+
+
+Write a program using while loop
+$my_qry = mysql_query("SELECT * FROM `users` WHERE `u_id`='1'; ");
+while($result = mysql_fetch_array($my_qry))
+{
+echo $result['First_name'.]."<br/>";
+}
+
+
+
+How we can retrieve the data in the result set of MySQL using PHP?
+1. mysql_fetch_row
+2. mysql_fetch_array
+3. mysql_fetch_object
+4. mysql_fetch_assoc
+
+
+What is the use of explode() function ?
+Syntax : array explode ( string $delimiter , string $string [, int $limit ] );
+This function breaks a string into an array. Each of the array elements is a substring of string formed by splitting it on boundaries formed by the string delimiter.
+
+
+
+What is the difference between explode() and split() functions?
+Split function splits string into array by regular expression. Explode splits a string into array by string.
+
+
+
+What is the use of mysql_real_escape_string() function?
+It is used to escapes special characters in a string for use in an SQL statement
+
+Write down the code for save an uploaded file in php.
+if ($_FILES["file"]["error"] == 0)
+{
+move_uploaded_file($_FILES["file"]["tmp_name"],"upload/" . $_FILES["file"]["name"]);
+      echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
+}
+
+
+
+How to create a text file in php?
+$filename = "/home/user/guest/newfile.txt";
+$file = fopen( $filename, "w" );
+if( $file == false )
+{
+echo ( "Error in opening new file" ); exit();
+}
+fwrite( $file, "This is a simple test\n" );
+fclose( $file );
+
+
+
+How to strip whitespace (or other characters) from the beginning and end of a string ?
+The trim() function removes whitespaces or other predefined characters from both sides of a string.
+
+What is the use of header() function in php ?
+The header() function sends a raw HTTP header to a client browser.Remember that this function must be called before sending the actual out put.For example, You do not print any HTML element before using this function.
+
+There are Number of Use of HEADER() function in php like below
+1> The header() function use to sends a raw HTTP header to a client.
+2> We can use header() function for redirection of pages.
+3> Used to refresh the page on given time interval automatically.
+4> To send email header content like cc, bcc , reply to etc data and lot more
+
+
+
+How stop the execution of a php script ?
+exit() function is used to stop the execution of a page
+
+
+How to find the length of a string?
+strlen() function used to find the length of a string
+
+
+what is the use of rand() in php?
+It is used to generate random numbers.If called without the arguments it returns a pseudo-random integer between 0 and getrandmax().
+
+
+what is the use of isset() in php?
+This function is used to determine if a variable is set and is not NULL
+
+
+
+What is the difference between mysql_fetch_array() and mysql_fetch_assoc() ?
+mysql_fetch_assoc function Fetch a result row as an associative array, While mysql_fetch_array() fetches an associative array, a numeric array, or both
+
+
+
+What is the importance of "method" attribute in a html form?
+"method" attribute determines how to send the form-data into the server.There are two methods, get and post. The default method is get.This sends the form information by appending it on the URL.Information sent from a form with the POST method is invisible to others and has no limits on the amount of information to send.
+
+
+
+What is the use of "enctype" attribute in a html form?
+The enctype attribute determines how the form-data should be encoded when submitting it to the server. We need to set enctype as "multipart/form-data" when we are using a form for uploading files
+
+
+
+How to create an array of a group of items inside an HTML form ?
+We can create input fields with same name for "name" attribute with squire bracket at the end of the name of the name attribute, It passes data as an array to PHP.
+For instance :
+
+<input name="MyArray[]" />
+
+
+How send email using php?
+To send email using PHP, you use the mail() function.This mail() function accepts 5 parameters as follows (the last 2 are optional). You need webserver, you can't send email from localhost. eg : mail($to,$subject,$message,$headers);
+
+
+
+Difference between mysql_connect and mysql_pconnect?
+mysql_pconnect() makes a persistent connection to the database which means a SQL link that do not close when the execution of your script ends. mysql_connect()provides only for the databasenewconnection while using mysql_pconnect , the function would first try to find a (persistent) link that's already open with the same host, username and password. If one is found, an identifier for it will be returned instead of opening a new connection... the connection to the SQL server will not be closed when the execution of the script ends. Instead, the link will remain open for future use.
+
+
+
+What is the use of "ksort" in php?
+It is used for sort an array by key in reverse order.
+
+
+What is the difference between $var and $$var?
+They are both variables. But $var is a variable with a fixed name. $$var is a variable who's name is stored in $var. For example, if $var contains "message", $$var is the same as $message.
+
+
+
+What is the use of the function htmlentities?
+htmlentities Convert all applicable characters to HTML entities This function is identical to htmlspecialchars() in all ways, except with htmlentities(), all characters which have HTML character entity equivalents are translated into these entities.With use of htmlentities, user can't run the html tags like h2, p, script etc. It helps to prevent you from XSS attack.
+
+Question: How session and cookie works together?
+Create an session in PHP.
+Session data is stored in Server.
+Session data have unique name.
+Session unique key with domain name is stored in browser cookie.
+Now, Browser keep the login with use of unique key(in cookie) and session data (stored in server side).
+
+Question: How to create subdomain?
+With use virtual host and htaccess, you can create sub domain.
+
+Question: What are the various methods to pass data from one web page to another web page?
+Session
+Cookie
+Database
+URL parameters
+
+Question: What are super global variables?
+$_COOKIE – Stored information in Cookie.
+$_GET – Send data in URL as paramter.
+$_POST – Send data to server OR Page as POST Method.
+$_REQUEST – Its combined array containing values from the $_GET, $_POST and $_COOKIES.
+$_ENV – Get/Set varaible in environment.
+$_FILES – Used to upload the file, image and videos etc.
+$_SERVER – It have all server information.
+$GLOBALS – Contains all the global variables associated with the current script.
+
+Question: How to get a user's IP address of client.
+echo $_SESSION['REMOTE_ADDR'];
+
+
+CMS means Content Management System. It is web software who provide the website full fledged content management where owner can add/update/delete the html/files/images/videos etc. Today's CMS do much more as compare to its name.
+For example. Joomla/Wordpress is CMS but you can create E-commererce website and can accpet all types of payment.
+
+Question: How to create unique random password?
+echo md5(uniqid(rand(), true));
+
+Question: What is the difference between echo and print?
+echo constructor which is used to display the value in browser.
+print is function which is used to display and return the value.
+
+What does ob_start do?
+likelihood medium
+Makes it so PHP does not output anything.
+
+What is the meaning of a final class and a final method?
+likelihood medium
+Final keywords indicates that the class or method cannot be extended.
+
+) How do you execute a PHP script from the command line?
+
+Just use the PHP command line interface (CLI) and specify the file name of the script to be executed as follows:
+
+
+php script.php
+
+59) What does accessing a class via :: means?
+
+:: is used to access static methods that do not require object initialization.
+
+64) what is the definition of a session?
+
+A session is a logical object enabling us to preserve temporary data across multiple PHP pages.
+
+6) How is it possible to propagate a session id?
+
+It is possible to propagate a session id via cookies or URL parameters.
+
+67) What is the meaning of a Persistent Cookie?
+
+A persistent cookie is permanently stored in a cookie file on the browser’s computer. By default, cookies are temporary and are erased if we close the browser.
+
+68) When sessions ends?
+
+Sessions automatically ends when the PHP script finishs executing, but can be manually ended using the session_write_close().
+
+69) What is the difference between session_unregister() and session_unset()?
+
+The session_unregister() function unregister a global variable from the current session and the session_unset() function free all session variables.
+
+
+71) What does $_SERVER means?
+
+$_SERVER is an array including information created by the web server such as paths, headers, and script locations.
+
+72) What does $_FILES means?
+
+$_FILES is an associative array composed of items sent to the current script via the HTTP POST method.
+
+3) How can we determine whether a PHP variable is an instantiated object of a certain class?
+
+To be able to verify whether a PHP variable is an instantiated object of a certain class we use instanceof.
+
+What's the difference between __sleep and __wakeup?
+
+  __sleep returns the array of all the variables that need to be saved, while __wakeup retrieves    them.
+
+
+
+27) What is the function file_get_contents() usefull for?
+
+file_get_contents() lets reading a file and storing it in a string variable.
+
+36) How can we check the value of a given variable is a number?
+
+It is possible to use the dedicated function, is_numeric() to check whether it is a number or not.
+
+37) How can we check the value of a given variable is alphanumeric?
+
+It is possible to use the dedicated function, ctype_alnum to check whether it is an alphanumeric value or not.
+
+How to get the value of current session id?
+session_id() function returns the session id for the current session.
+
+
+What are the differences between mysql_fetch_array(), mysql_fetch_object(), mysql_fetch_row()?
+Mysql_fetch_array Fetch a result row as an associative array, a numeric array, or both.
+mysql_fetch_object ( resource result ) Returns an object with properties that correspond to the fetched row
+mysql_fetch_row() fetches one row of data from the result associated with the specified result identifier. The row is returned as an array.
+
+
+
+what is sql injection ?
+SQL injection is a malicious code injection technique.It exploiting SQL vulnerabilities in Web applications
+
+
+
+What is x+ mode in fopen() used for?
+Read/Write. Creates a new file. Returns FALSE and an error if file already exists
+
+
+How to find the position of the first occurrence of a substring in a string
+strpos() is used to find the position of the first occurrence of a substring in a string
+
+
+What is PEAR?
+
+PEAR means “PHP Extension and Application Repository”.PEAR is a framework and distribution system for reusable PHP components.The project seeks to provide a structured library of code, maintain a system for distributing code and for managing code packages, and promote a standard coding style.
+
+
+
+Distinguish between urlencode and urldecode?
+This method is best when encode a string to used in a query part of a url. it returns a string in which all non-alphanumeric characters except -_. have replece with a percentege(%) sign . the urldecode->Decodes url to encode string as any %and other symbole are decode by the use of the urldecode() function.
+
+
+11) Is multiple inheritance supported in PHP?
+
+PHP includes only single inheritance, it means that a class can be extended from only one single class using the keyword ‘extended’.
+
+
+12) What is the meaning of a final class and a final method?
+
+‘final’ is introduced in PHP5. Final class means that this class cannot be extended and a final method cannot be overrided.
+
+
+13) How comparison of objects is done in PHP5?
+
+We use the operator ‘==’ to test is two object are instanced from the same class and have same attributes and equal values. We can test if two object are refering to the same instance of the same class by the use of the identity operator ‘===’.
+
+7) What is needed to be able to use image function?
+
+GD library is needed to be able execute image functions.
+
+
+18) What is the use of the function ‘imagetypes()’?
+
+imagetypes() gives the image format and types supported by the current version of GD-PHP.
+
+
+19) What are the functions to be used to get the image’s properties (size, width and height)?
+
+The functions are getimagesize() for size, imagesx() for width and imagesy() for height.
+
+ How can we display information of a variable and readable by human with PHP?
+
+To be able to display a human-readable result we use print_r().
+
+ How is it possible to set an infinite execution time for PHP script?
+
+The set_time_limit(0) added at the beginning of a script sets to infinite the time of execution to not have the PHP error ‘maximum execution time exceeded’.It is also possible to specify this in the php.ini file.
+
+
+
+ 25) What does the PHP error ‘Parse error in PHP – unexpected T_variable at line x’ means?
+
+This is a PHP syntax error expressing that a mistake at the line x stops parsing and executing the program.
+
+
+7) What is the function file_get_contents() usefull for?
+
+file_get_contents() lets reading a file and storing it in a string variable.
+
+
+
+32) Which function gives us the number of affected entries by a query?
+
+mysql_affected_rows() return the number of entries affected by an SQL query.
+
+
+
+6) How can we check the value of a given variable is a number?
+
+It is possible to use the dedicated function, is_numeric() to check whether it is a number or not.
+
+
+37) How can we check the value of a given variable is alphanumeric?
+
+It is possible to use the dedicated function, ctype_alnum to check whether it is an alphanumeric value or not.
+
+
+) How do I check if a given variable is empty?
+
+If we want to check whether a variable has a value or not, it is possible to use the empty() function.
+
+
+1) How do I escape data before storing it into the database?
+
+addslashes function enables us to escape data before storage into the database.
+
+42) How is it possible to remove escape characters from a string?
+
+The stripslashes function enables us to remove the escape characters before apostrophes in a string.
+
+43) How can we automatically escape incoming data?
+
+We have to enable the Magic quotes entry in the configuration file of PHP.
+
+44) What does the function get_magic_quotes_gpc() means?
+
+The function get_magic_quotes_gpc() tells us whether the magic quotes is switched on or no.
+
+45) Is it possible to remove the HTML tags from data?
+
+The strip_tags() function enables us to clean a string from the HTML tags.
+
+46) what is the static variable in function useful for?
+
+A static variable is defined within a function only the first time and its value can be modified during function calls as follows:
+
+<!--?php function testFunction() { static $testVariable = 1; echo $testVariable; $testVariable++; } testFunction();
+
+
+. How can I disable the output of error message inside a HTML page?
+
+Ans. Use  error_reporting(0);  to hide the error message in output.
+
+ Why we use session variable ?
+
+Ans.  When we work on an application, we open it, do our stuff and then we close it. This is much like a (time interval)Session. The computer knows who we are. It knows when we started the application and when we ended it. But on the internet there is a problem,  web server does not know who we are and what we do. Because the HTTP address does not maintain state.
+A PHP session solves this problem by allowing us to store user information on the server for later use (i.e. username, place,email id etc). However, session information is temporary and will be deleted as soon as the user has left the website. If we need a permanent storage then we have to store the data in a database.
+
+
+
+ What is the difference between echo and print() in php ?
+
+Ans. echo - can output one or more strings
+          echo - in only a statement is not a function
+
+          print - can only output one string, and returns always 1
+          print- is a function
+
+
+
+   What is an Array in PHP?
+ 	An array in PHP is really an ordered map of pairs of keys and values.
+
+
+ 	Which function would you use to merge two arrays?
+ 	You can merge arrays with the array_merge() function.
+
+
+
+	What is a cookie?
+ 	A cookie is a small amount of information sent by a Web server to a web browser and then sent back unchanged by the browser each time it accesses that server. HTTP cookies are used for authenticating, tracking, and maintaining specific information about users, such as site preferences and the contents of their electronic shopping carts
+
+
+
+ 	What is the difference between temporary cookies and persistent cookies?
+ 	Temporary cookies can not be used for tracking long term information.Persistent cookies can be used for tracking long term information.Temporary cookies are safer because no programs other than the browser can access them.
+Persistent cookies are less secure because users can open cookie files see the cookie values..
+
+
+
+ 	5.	What is Session Id?
+ 	A session ID is an identification string of a session. Since there might be multiple visitors coming to your Web site at the same time, the PHP engine needs to maintain multiple sessions concurrently. Session IDs are created and maintained by the PHP engine to identify sessions.
+
+
+) How can we define a variable accessible in functions of a PHP script?
+
+This feature is possible using the global keyword.
+
+
+How is it possible to return a value from a function?
+
+A function returns a value using the instruction ‘return $value;’.
+
+
+
+) What is the most convenient hashing method to be used to hash passwords?
+
+It is preferable to use crypt() which natively supports several hashing algorithms or the function hash() which supports more variants than crypt() rather than using the common hashing algorithms such as md5, sha1 or sha256 because they are conceived to be fast. hence, hashing passwords with these algorithms can vulnerability.
+
+
+50) Which cryptographic extension provide generation and verification of digital signatures?
+
+The PHP-openssl extension provides several cryptographic operations including generation and verification of digital signatures.
+
+
+
+What is faster?
+
+1- Combining two variables as follows:
+
+$variable1 = ‘Hello ‘;
+
+$variable2 = ‘World';
+
+$variable3 = $variable1.$variable2;
+
+Or
+
+2- $variable3 = “$variable1$variable2″;
+
+$variable3 will contain “Hello World”. The first code is faster than the second code especially for large large sets of data.
+
+
+5) How to initiate a session in PHP?
+
+The use of the function session_start() lets us activating a session.
+
+
+How is it possible to propagate a session id?
+
+It is possible to propagate a session id via cookies or URL parameters.
+
+
+
+8) When sessions ends?
+
+Sessions automatically ends when the PHP script finishs executing, but can be manually ended using the session_write_close().
+
+
+69) What is the difference between session_unregister() and session_unset()?
+
+The session_unregister() function unregister a global variable from the current session and the session_unset() function free all session variables.
+
+70) What does $GLOBALS means?
+
+$GLOBALS is associative array including references to all variables which are currently defined in the global scope of the script.
+
+71) What does $_SERVER means?
+
+$_SERVER is an array including information created by the web server such as paths, headers, and script locations.
+
+72) What does $_FILES means?
+
+$_FILES is an associative array composed of items sent to the current script via the HTTP POST method.
+
+73) What is the difference between $_FILES['userfile']['name'] and $_FILES['userfile']['tmp_name']?
+
+$_FILES['userfile']['name'] represents the original name of the file on the client machine,
+
+$_FILES['userfile']['tmp_name'] represents the temporary filename of the file stored on the server.
+
+
+
+
+) How can we get the error when there is a problem to upload a file?
+
+$_FILES['userfile']['error'] contains the error code associated with the uploaded file.
+
+75) How can we change the maximum size of the files to be uploaded?
+
+We can change the maximum size of files to be uploaded by changing upload_max_filesize in php.ini.
+
+
+
+) What does $_ENV means?
+
+$_ENV is an associative array of variables sent to the current PHP script via the environment method.
+
+
+What does $_COOKIE means?
+
+$_COOKIE is an associative array of variables sent to the current PHP script using the HTTP Cookies.
+
+
+0) What are the two main string operators?
+
+The first is the concatenation operator (‘.’), which returns the concatenation of its right and left arguments. The second is (‘.=’), which appends the argument on the right to the argument on the left.
+
+81) What does the array operator ‘===’ means?
+
+$a === $b TRUE if $a and $b have the same key/value pairs in the same order and of the same types.
+
+
+
+82) What is the differences between $a != $b and $a !== $b?
+
+!= means inequality (TRUE if $a is not equal to $b) and !== means non-identity (TRUE if $a is not identical to $b).
+
+
+83) How can we determine whether a PHP variable is an instantiated object of a certain class?
+
+To be able to verify whether a PHP variable is an instantiated object of a certain class we use instanceof.
+
+
+
+How is it possible to parse a configuration file?
+
+The function parse_ini_file() enables us to load in the ini file specified in filename, and returns the settings in it in an associative array.
+
+
+
+
+9) What is the difference between the functions strstr() and stristr()?
+
+The string function strstr(string allString, string occ) returns part of allString from the first occurrence of occ to the end of allString. This function is case-sensitive. stristr() is identical to strstr() except that it is case insensitive.
+
+
+
+0) what is the difference between for and foreach?
+
+for is expressed as follows:
+
+for (expr1; expr2; expr3)
+
+statement
+
+The first expression is executed once at the beginning. In each iteration, expr2 is evaluated. If it is TRUE, the loop continues and the statements inside for are executed. If it evaluates to FALSE, the execution of the loop ends. expr3 is tested at the end of each iteration.
+
+However, foreach provides an easy way to iterate over arrays and it is only used with arrays and objects.
+
+
+
+) Is it possible to submit a form with a dedicated button?
+
+It is possible to use the document.form.submit() function to submit the form. For example: <input type=button value=”SUBMIT” onClick=”document.form.submit()”>
+
+92) What is the difference between ereg_replace() and eregi_replace()?
+
+The function eregi_replace() is identical to the function ereg_replace() except that it ignores case distinction when matching alphabetic characters.
+
+
+
+96) How can we pass the variable through the navigation between the pages?
+
+It is possible to pass the variables between the PHP pages using sessions, cookies or hidden form fields.
+
+
+--------------
+
+
+
+
+Q)How can I sort a multi-dimensional array?
+
+(Ans)This can easily be done using the function in PHP that is called array_multisort.
+
+Here is an example of this function in action:
+
+<?php
+
+$multiarray = array(array(5,4,3,2,1),array(7,8,2,9,10));
+
+array_multisort($multiarray[0],SORT_ASC);
+
+print_r($multiarray);
+
+
+
+(Q) How can I create an array of the letters of the alphabet?
+(Ans) This is done using the range operator which will create an array of the letters:
+
+<?php
+$letters = range(a,z);
+?>
+
+
+
+(Q)How do you remove duplicate values from an array?
+(Ans)  Duplicate values are easily removed using the array_unique function:
+
+<?php
+$values = array("banana","apple","pear","banana");
+$values = array_unique($values);
+print_r($values);
+?>
+
+
+
+(Q) What is the function of array_intersect()?
+(Ans)   array_intersect() can find common elements in given arrays without modifying originals. Ex- array_intersect($arr1, $arr2);
+
+
+
+(Q) What is the function of array_slice()?
+(Ans) array_slice()- It can copy some elements from an array to another.
+Ex 1- array_slice($arr1, 4,5);
+4 is index no to start from left.
+5 is no. of elements to extract.
+
+
+) What is the function of floor()?
+(Ans) array_floor()- It can convert a float no. into lower integer no.
+Ex- array_floor(4.5);
+
+
+What is the function of ceil()?
+(Ans) ceil()- It can convert a float no. into upper integer no.
+Ex- ceil(4.7);
+
+
+Q-2: How can we count the number of elements of an array?
+Ans: There are two ways:
+1. sizeof($arrayname) This function is an alias of count()
+2. count($arrayname) If u just pass a simple variable instead of an array it will return 1.
+
+
+
+What are the different functions in sorting an array?
+Ans: Sorting functions in PHP:
+sort- Ascending order
+rsort- Descending order
+asort- Elements of associative array are sorted in ascending order.
+arsort- Elements of associative array are sorted in descending order.
+ksort- Keys of associative array are sorted in ascending order.
+krsort- Keys of associative array are sorted in descending order.
+uksort- Sorts an array by element keys using user-defined sorting (comparision) function.
+
+
+
+Q-6: What is the task of array_key_exists()?
+Ans:
+array_key_exists- Checks given key in an array.
+
+
+Q-7: How to print an array?
+Ans: print_r() is used to print elements of an array.
+
+
+-8: What is the function of array_merge()?
+Ans: array_merge() can merge or combine a no. of arrays without modifying originals. Ex- array_merge($arr1, $arr2, $arr3, …);
+
+
+What is the function of array_sum()?
+Ans: array_sum() can find addition of elements of an array without modifying originals. Ex- array_sum($arr1);
+
+
+2: What is the function of array_diff()?
+Ans: array_diff() can find different elements in in 1st array which are not present in 2nd array. Ex- array_diff($arr1, $arr2);
+
+
+ What is the function of array_slice()?
+Ans: array_slice()- It can copy some elements from an array to another.
+Ex 1- array_slice($arr1, 4,5);
+4 is index no to start from left.
+5 is no. of elements to extract.
+
+
+: What are arry_filter() & array_map()?
+Ans: Both are used to access specific values from an array.
+array_filter("array input", "function as string" )
+array_map("function", "array input")
+
+
+6. What is the difference between array_merge and array_combine.
+array_merge merges the elements of one or more than one array such that the value of one array appended at the end of first array. If the arrays have same strings  key  then the later value overrides the previous value for that key .
+
+Array_combine creates a new array by using the key of one array as keys and using the value of other array as values.
+
+
+9. What is use of var_dump .
+var_dump() function is used to display structured information(type and value) about one or more variable.
+
+
+What is str_replace().
+This function replace some characters with some other characters in a string , this function is case sensitive.
+syntax:- str_replace(find,replace,string);
+
+
+Question: How to convert array to json in php?
+$array = array('one','two');
+echo json_encode($array); //use json_decode for decode
+
+Question: How to count the number of elements in an array?
+$array = array('cakephp','zend');
+sizeof($array);
+count($array);
+
+
+
+ What is a .htacces file.
+.htaccess is a configuration file running on Apache server.These .htaccess file used to change the functionality and features of apache web  server .
+
+
+8. How to read the contents of a file in PHP.
+<?php
+   $fileName = 'instructions.txt';
+   $file = fopen(“instructions.txt”,”r”)  or exit(“Unable to open the file!”) ;
+   While( ! feof($file) )                            // feof()checks the end of  file in php
+  {
+       echo   fgets($file);                       // fgets() read a  fileline by line in php
+  }
+  fclose($file);                                      // fclose() used to close a file  in php
+?>
+
+
+
+
+9. How to read a file character by character.
+<?php
+fgetc() function is used to read a file character by character.
+e.g.
+   While(!feof($file))                            // feof()checks the end of  file in php
+   {
+       echo   fgetc($file);                        // fgetc() read a  file character  by character in PHP
+   }
+?>
+
+
+. What is PHP filter.
+PHP filter is used to validate the data coming from different sources like the user’s input.It is important part of a web application to test, validate the data coming from insecure sources.We have different functions to validate the data:
+
+filter_var();
+filter_var_array();
+filter input();
+filter_input_array();
+
+
+
+
+
+42. How can we get all the properties of browser in PHP.
+We can get the browser properties in PHP by :
+<?php
+$_SERVER ['HTTP_USER_AGENT'] ;
+?>
+
+
+
+. What is end function in PHP.
+End function can set the pointer of an array to the last element of array.
+e.g :
+<?php
+$arr               =  array('name'=>'angel' ,'city'=>'delhi' ,'profession'=>'web developer');
+$lastValue     = end($arr);
+?>
+OUTPUT :  web developer
+
+
+
+
+7. Why we use strpos in PHP.
+Strpos used to find the  first occurrence of a string in another string.It return the position of the substring in a string . If the searched string will not exists in the searching string it return false.
+Synatx : strpos(‘stringtosearchin’ ,’stringtosearch’);
+e.g  :
+<?php
+         $mystring   =  ’lets knowit ’;
+         $find            =  ‘knowit ’;
+         $result        =  strpos($mystring,$find)     //OUTPUT : 6
+?>
+
+
+
+ 3. What is difference between single quotes and double quotes in php.
+ When string is in single quotes php will not evaluate it . If there is a string with single quotes and if we place a variable in that it would not substitute its value in string,  whereas double quotes support variable expansion. If we place variable in double quotes it would substitute its value in string.
+
+
+8.How can we extract string ‘abc.com ‘ from a string ‘http:// info@abc.com’ using regular expression of PHP?
+preg_match(”|[^@]*@(.*)|im”, $text, $output);
+$output will give result in second index of array, means $output[1] is answer. or
+$exploded[1] should have abc.com or
+echo mailto:substr(“>substr); or
+preg_match(”/^(http:\/\/info@)?([^\/]+)/i”, $data); or
+echo $data[2];
+preg_match(’/^http:\/\/.+@(.+)$/’,$found); or
+echo $found[1];
+Use the function split split which returns an array any second element of the returned array will hold the value as abc.com.
+
+
+34 How can we register the variables into a session?
+$_SESSION[’name’] = “Chinmay”;
+To destroy a session: unset($_SESSION[’name’]);
+$_SESSION[’var’] = ‘value’; or
+
+
+
+Question : How can we extract string ‘hotmail.com ‘ from a string raghav.cool@hotmail.com using regular expression of PHP?
+
+Answer : preg_match(”/^http://invalid.invalid/@(.+)$/”,’raghav.cool@hotmail.com’,$found);
+echo $found[1];
+
+
+How Session - cookie works in PHP?
+When a website open in new client machine(Browser), new sessionId is created and stored in php server and in client machine (In cookie).
+All data is store in PHP Server and cookie only have sessionId. When client send sessionId with request to the server, then server fetch the data corresponsing to that sessionId and retun to the browser.
+
+
+What is extensions of PHP File?
+.php, .phtml, .php4, .php3, .php5, .phps
+
+ob_start - save php output to a string
+
+Question: How to convert string to array in php?
+$string="cakephp and zend";
+$array =explode('and',$string);
+print_r($array);
+
+
+Question: How to convert array to string in php?
+$array = array('cakephp','zend');
+$string =implode(' and ',$array);
+echo $string;
+
+Question: Give Curl example using post method?
+$postData = array(
+   "site" => "web technology experts notes",
+   "dailyuser" => "1000",
+   "location" => "India"
+);
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "http://www.example.com");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+$output = curl_exec($ch);
+curl_close($ch);
+echo $output;
+
+
+Question: How to destroy one session?
+unset($_SESSION['object']);
+
+
+Question: How to Destroys all data registered to a session?
+session_destroy();
+
+ ------------------------------------------------------------------------
+
+
+ What is Object Oriented Programming?
+ 	Object Oriented Programming is a Style of programming that represents a program as a system of objects and enables code-reuse.Object orientation is a software/Web development methodology that is based on the modeling a real world system.An object is the core concept involved in the object orientation. An object is the copy of the real world enity.
+
+    Object-oriented programming (OOP) is a programming language model organized around objects rather than "actions" and data rather than logic. Historically, a program has been viewed as a logical procedure that takes input data, processes it, and produces output data.
+
+Advantages of object oriented programming:
+
+Code Re-usability(Polymorphism,Interfaces): In OOPs objects created in one program can be reused in different programs.
+Code extensibility: for addding new features or modifying existing objects can be solved by introducing new objects.
+Catch errors at compile time rather than at runtime.
+Maintainability :objects can be maintained separately, so u can easily fix errors.
+Imrove error handling:We can use exceptions to improve error handling.
+Modularity: can create seperate Modules.
+Modifiability:it is easy to make minor changes in some classes as Changes inside a class do not affect any other part of a program.
+
+
+     What is Constructor?
+A is special method of the class that will be automatically invoked when an instance of the class is created is called as constructor.
+
+Constructors are mainly used to initialize private fields of the class while creating an instance for the class.
+
+When you are not creating a constructor in the class, then compiler will automatically create a default constructor in the class that initializes all numeric fields in the class to zero and all string and object fields to null.
+
+Syntax.
+[Access Modifier] ClassName([Parameters])
+{
+}
+
+9. Types of Constructors
+Basically constructors are 5 types those are
+Default Constructor
+Parameterized Constructor
+Copy Constructor
+Static Constructor
+Private Constructor
+
+
+13. Different between method overriding and  method overloading?
+In Overriding methods it will create two or more methods with same name and same parameter in different classes.
+
+while Overloading it will create more then one method with same name but different parameter in same class.
+
+
+
+
+
+ 	 ) Explain about inheritance in OOPS?
+Objects in one class can acquire properties of the objects in other classes by way of inheritance. Reusability which is a major factor is provided in object oriented programming which adds features to a class without modifying it. New class can be obtained from a class which is already present.
+
+
+11) Explain about a class in OOP?
+A class defines the characteristics of an object and its behaviors. This defines the nature and functioning of a specified object to which it is assigned.
+
+
+ Explain the usage of encapsulation?
+Encapsulation passes the message without revealing the exact functional details of the class. It allows only the relevant information to the user without revealing the functional mechanism through which a particular class had functioned..
+
+
+13) Explain about abstraction?
+It solves a complex problem by defining only those classes which are relevant to the problem and not involving the whole complex code into play.
+
+
+Explain what is an object?
+An object is a combination of messages and data. Objects can receive and send messages and use messages to interact with each other. The messages contain information that is to be passed to the recipient object.
+
+
+ Explain about polymorphism?
+Polymorphism helps a sub class to behave like a parent class. When an object belonging to different data types respond to methods which have a same name, the only condition being that those methods should perform different function.
+
+It is simply "One thing, can use in different forms"
+For example, One car (class) can extend two classes (hond & Alta)
+
+
+       What are access control modifiers in php.
+Keywords public,protected and private are the three types of access control modifiers in php.With  the help of these  keywords we can manage  the accessing  of a method or property of a class .
+
+
+41. What is difference between public, private and protected in php.
+Public :
+The items which are declared public can be access from everywhere ie access from inside the class ,access in inherited class and   access from outside the class.
+
+Protected :
+The items which are declared protected can be access inside the class that defines the item  and can acess in its child classes  (ie access in its inherited class) .
+
+Private :
+The items which are declared private can only be access inside its class that defines the item.
+
+
+What is an Abstract class ?
+Answers : 6
+Abstract class defines an abstract concept which can not be instantiated and comparing o interface it can have some implementation while interfaces can not. Below are some
+points for abstract class:-
+=>We can not create object of abstract class it can only be inherited in a below class.
+=> Normally abstract classes have base implementation and then child classes derive from the abstract class to make the class concrete.
+
+
+What are Abstract methods?
+Answers : 7
+Abstract class can contain abstract methods. Abstract methods do not have implementation. Abstract methods should be implemented in the subclasses which inherit them.
+
+
+What is the difference between Abstract classes and Interfaces ?
+Answers :
+Difference between Abstract class and Interface is as follows:-
+Abstract class can only be inherited while interfaces can not be it has to be implemented.
+Interface cannot implement any methods, whereas an abstract class can have implementation.
+An interface is a collection of abstract method. If the class implements an inheritance, and then thereby inherits all the abstract methods of an interface.
+Class can implement many interfaces but can have only one super class.
+Interface is not part of the class hierarchy while Abstract class comes in through inheritance.
+Unrelated classes can implement the same interface.
+ All methods in interfaces must be public
+
+
+
+12. What is final class.
+final class is a class that can not be inherited.Its protect the methods of class to be overriden by the child classes.
+
+
+	What is difference between Static and Non-Static fields of a class ?
+Answers : 9
+Non-Static values are also called as instance variables. Each object of the class has its own copy of Non-Static instance variables. So when a new object is created of the same class it will have completely its own copy of instance variables. While Static values have only one copy of instance variables and will be shared among all the objects of the class.
+
+
+
+11	What is a constructor in class?
+Answers : 11
+Constructor is a method used to initialize the state of an object, and it gets invoked at the time of object creation. Rules forconstructor are:.
+Constructor Name should be same asclass name.
+Constructor must have no return type.
+
+
+
+Define exceptions ?
+Answers : 17
+An exception is an abnormal condition that arises in a code sequence at run time. Basically there are four important keywords which form the main pillars of exception handling: try, catch, throw and finally. Code which you want to monitor for exception is contained in the try block.
+
+
+. Define Destructor?
+Destructor is a method which is automatically called when the object ismade ofscope or destroyed. Destructor name is also same asclass name but with the tilde symbol before the name.
+
+
+4. What is function overloading?
+Function overloading is defined as a normal function, but it has the ability to perform different tasks. It allowscreation of several methods with the same name which differ from each other by type of input and output of the function.
+
+Example:
+void add(int& a, int& b);
+void add(double& a, double& b);
+void add(struct bob& a, struct bob& b);
+
+
+34. What is ‘this’ pointer?
+THIS pointer refers to the current object of a class. THIS keyword is used as a pointer which differentiates between the current object with the global object. Basically, it refers to the current object.
+
+
+. What is the difference between structure and a class?
+Structure default access type is public , but class access type is private. A structure is used for grouping data whereas class can be used for grouping data and methods.
+Structures are exclusively used for dataand it doesn’t require strict validation , but classes are used to encapsulates and inherit data which requires strict validation.
+
+
+What is the default access modifier in a class?
+The default access modifier of a class is Private by default.
+
+
+. What are all the operators that cannot be overloaded?
+Following are the operators that cannot be overloaded -.
+Scope Resolution (:: )
+Member Selection (.)
+
+
+static class
+
+A static class is basically the same as a non-static class, but there is one difference: a static class cannot be instantiated. In other words, you cannot use the new keyword to create a variable of the class type. Because there is no instance variable, you access the members of a static class by using the class name itself. For example, if you have a static class that is named UtilityClass that has a public method named MethodA, you call the method as shown in the following example:
+
+
+UtilityClass.MethodA();
+
+
+What’s the difference between accessing a class method via -> and via ::?
+:: is allowed to access methods that can perform static operations, i.e. those, which do not require object initialization.
+
+
+How do you call a constructor for a parent class?
+parent::__construct();
+
+
+What's the purpose of using a private constructor?
+
+It ensures that there can be only one instance of a Class and provides a global access point to that instance and this is common with The Singleton Pattern.
+
+The singleton pattern
+
+This pattern involves a single class which is responsible to create an object while making sure that only single object gets created. This class provides a way to access its only object which can be accessed directly without need to instantiate the object of the class.
+
+What is Object Oriented Programming?
+Object-oriented programming (OOP) is a programming language model organized around objects rather than actions;
+Objects are instances of classes, are used to interact with one another.
+
+
+What is difference between class and interface?
+1) Interfaces do not contain business logic
+2)You must extend interface to use.
+3) You can't create object of interface.
+
+
+How to load classes in PHP.
+We can load a class with the use of "autoload" class.
+
+Are Parent constructors called implicitly when create an object of class?
+No, Parent constructors are not called implicitly It must call this explicitly. But If Child constructors is missing then parent constructor called implicitly.
+
+
+What are different visibility of method/property?
+There are 3 types of visibility of method & property and are following
+Public: Can be accessed from same class method, child class and from outside of class.
+Protected : Can be accessed from same class method, child class.
+Private: Can be accessed from same class method only.
+
+What is Scope Resolution Operator?
+The Scope Resolution Operator (also called Paamayim Nekudotayim) is double colon that allows access to static, constant, and overridden properties or methods of a class.
+
+
+Tuesday, 7 January 2014
+OOP Interview Questions And Answers
+OOP Interview Questions and Answers
+
+
+What is Object Oriented Programming?
+Object-oriented programming (OOP) is a programming language model organized around objects rather than actions;
+Objects are instances of classes, are used to interact with one another.
+
+Following are few examples of object-oriented programming languages
+PHP, C++, Objective-C, Smalltalk, C#, Perl, Python, Ruby.
+
+The goals of object-oriented programming are:
+Increased understanding.
+Ease of maintenance.
+Ease of evolution.
+
+
+What is data modeling?
+In class, we create multiple get/set function to get and set the data through the protected functions known as Data Modeling.
+class dataModel {
+    public function __set( $key, $value ) {
+        $this->$key = $value;
+    }
+}
+Following are the benefits of Data Modeling
+It is very fast.
+Smart way to  manipulation on data
+No extra layer of logic
+Really flexible to be modeled per need
+Setters can explicitly define what data can be loaded into the object
+
+
+What is difference between class and interface?
+1) Interfaces do not contain business logic
+2)You must extend interface to use.
+3) You can't create object of interface.
+
+
+
+How Session - cookie works in PHP?
+When a website open in new client machine(Browser), new sessionId is created and stored in php server and in client machine (In cookie).
+All data is store in PHP Server and cookie only have sessionId. When client send sessionId with request to the server, then server fetch the data corresponsing to that sessionId and retun to the browser.
+
+
+
+What are some of the big changes PHP has gone through in the past few years?
+5.1 added PDO
+5.3 - added namespace support
+
+
+
+What is Polymorphism?
+It is simply "One thing, can use in different forms"
+For example, One car (class) can extend two classes (hond & Alta)
+
+
+
+How to load classes in PHP.
+We can load a class with the use of "autoload" class.
+If we want to change from default function autoload to testautload function.
+we can do this with "spl_autoload_register"
+spl_autoload_register('kumar');
+
+
+
+How to call parent constructor?
+parent::__construct()
+
+
+
+Are Parent constructors called implicitly when create an object of class?
+No, Parent constructors are not called implicitly It must call this explicitly. But If Child constructors is missing then parent constructor called implicitly.
+
+
+
+What happen, If constructor is defined as private OR protected.
+If constructor declared as private, PHP through the following fatal error when create object. Fatal error: Call to private BaseClass::__construct() from invalid context in. If constructor declared as private, PHP through the following fatal error when create object. Fatal error: Call to protected BaseClass::__construct() from invalid context in
+
+
+
+What happen, If New-Style constructor & old-style constructor are defined. Which one will be called.
+New-Style constructor will called. But if New-Style constructor is missing, old style constructor will called.
+
+
+What are different visibility of method/property?
+There are 3 types of visibility of method & property and are following
+Public: Can be accessed from same class method, child class and from outside of class.
+Protected : Can be accessed from same class method, child class.
+Private: Can be accessed from same class method only.
+class TestClass
+{
+    public $public = 'Public';
+    protected $protected = 'Protected';
+    private $private = 'Private';
+
+    function printValue()
+    {
+        echo $this->public;
+        echo $this->protected;
+        echo $this->private;
+    }
+}
+
+$obj = new TestClass();
+echo $obj->public; // Works
+echo $obj->protected; // Fatal error: Cannot access protected property TestClass::$protected in
+echo $obj->private; // Fatal error: Cannot access private property TestClass::$private in C:\wamp\www\arun\class\class.php on line 20
+$obj->printValue(); // Shows Public, Protected and Private
+
+
+What is Scope Resolution Operator?
+The Scope Resolution Operator (also called Paamayim Nekudotayim) is double colon that allows access to static, constant, and overridden properties or methods of a class. Following are different uses Access to static
+Acess the constant
+Access the overridden properties of parent class
+Access the overridden methods of a parent class
+
+
+
+What is Static Keyword in PHP?
+If we declare a Method or Class Property as static, then we can access that without use of instantiation of the class.
+Static Method are faster than Normal method.
+$this is not available within Static Method.
+Static properties cannot be accessed through the object(i.e arrow operator)
+
+
+
+What is Abstraction in PHP?
+Abstraction are defined using the keyword abstract . Classes defined as abstract may not be instantiated (create object).
+To extend the Abstract class, extends operator is used.You can inherit only one abstract class at one time extending.
+Any class that contains one abstract method must also be declare as abstract. Methods defined as abstract simply declare the method's signature, they can't define the implementation.All methods marked as abstract in the parent's class, declaration must be defined by the child.additionally, these methods must be defined with the same (or a less restricted) visibility (Public,Protected & private).
+
+
+What is Interface in PHP?
+Interfaces are defined using the interface keyword.All methods declared in an interface must be public. Classes defined as Interface may not be instantiated(create object).To extend the interface class, implements operator is used.
+You can inherit number of interface class at the time of extending and number of abstract class separated by comma.
+All methods in the interface must be implemented within a child class; failure to do so will result in a fatal error.
+Interfaces can be extended like classes using the extends operator.The class implementing the interface must use the exact same method signatures as are defined in the interface.
+
+What is Traits in PHP?
+Traits are a mechanism for code reuse in single inheritance.
+
+
+What is Serialize function in php?
+It return string containing a byte-stream representation of any value that can be stored in PHP.
+
+What is Polymorphism?
+likelihood medium
+Don't get scared by the big word. It's simply the idea that one object can can take on many forms. So in PHP OOP one class "cars" may have two classes that extend it, for example a "Honda" class and a "BMW" class.
+
+multi-threading
+
+Multi-threading allows you to use up your machine’s resources intelligently. Instead of running everything in the same old top-to-bottom continuous execution, you can run tasks in parallel. What you are looking for is pthreads - The API that allows you to implement most sorts of multi-threading in your PHP code. It includes all the tools you need to create multi-threaded applications targeted at the Web or the Console. PHP applications can create, read, write, execute and synchronize with Threads, Workers and Stackables.

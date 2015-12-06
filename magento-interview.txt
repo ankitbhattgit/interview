@@ -1,0 +1,211 @@
+
+
+
+	What is the latest version of magento?
+Answers : 25
+Latest version of magento is 1.9.0.1 - Added on  May 16, 2014
+
+
+
+total tables
+
+
+330
+
+
+
+features
+
+
+Analytics and Reporting - the script is integrated with Google Analytics and offers many different reports.
+Product Browsing - multiple images for products, options for extensive reviews, wishlists and much more.
+Catalog Browsing - easy navigation, advanced product filtering system, product comparison.
+Catalog Management - inventory management, batch import and export of products, different tax rates per location, additional product attributes.
+Customer Accounts - order status and history, e-mail and RSS feeds for products in the wishlist, newsletter subscription, default billing and shipping address.
+Customer Service - enhanced features for customers' accounts, Contact Us form, comprehensive order tracking and history, customizable order e-mails.
+Order Management - create orders through admin area, create multiple invoices shipments and credit memos, call center order creation option.
+Payment - different payment methods: credit cards, PayPal, Authorize.net, Google Checkout, checks, money orders, support of external payment modules like Cybersource, ePay, eWAY and many more.
+
+
+
+ Explain Magento’s MVC architecture
+First of all, what is MVC?
+MVC stands for Model-View-Controller. Any application that separates it’s data access, business logic and user interface is called MVC.
+
+
+
+4. Difference between Mage::getSingleton() and Mage::getModel()
+
+The difference between Mage:getSingleton() and Mage::getModel() is that the former one does not create an object if the object for same class is already created, while the later creates new objects every time for the class when it’s called.
+Mage::getSingleton() uses the “singleton design pattern” of PHP. If the object is not created, it will create it.
+Mage::getSingleton() is mostly used when you want to create an object once, modify it and later fetch from it. Popular example is session, you first create a session object, and then add/remove values from session across different pages, so that it retains your values (e.g. cart values, logged in customer details, etc.) and doesn’t create new session object losing your last changes.
+Mage::getModel() is used when you want to have the fresh data from the database. Example is when you want to show records from database.
+
+
+
+
+ How will you call a CMS page in your module’s PHTML file?
+
+$this->getLayout()->createBlock(‘cms/block’)->setBlockId(‘blockidentifier’)->toHtml();
+
+
+ What is codePool in Magento?
+codePool is a tag which you have to specify when registering new module in app/etc/modules/Company_Module.xml
+There are 3 codePools in Magento: core, community and local, which are resided at app/code/ directory.
+Core codePool is used by Magento core team, Community is generally used by 3rd party extensions and Local codePool should be used for in-hour module development and overriding of core and community modules for custom requirement.
+So in short, codePool helps Magento to locate module inside app/code/ for processing.
+
+
+15. When will you need to clear cache to see the changes in Magento?
+When you have added/modified XML, JS, CSS file(s).
+
+
+How will you enable product’s custom attribute visibility in frontend?
+In the Manage Attributes section of the custom attribute, select Visible on Product View Page on Front-end and Used in Product Listing to Yes.
+
+
+ 24. Can you have more than one Grid in a module?
+Yes
+
+
+35. What are the commonly used block types? What is the special in core/text_list block type.
+Commonly used block types: core/template, page/html, page/html_head, page/html_header, page/template_links, core/text_list, page/html_wrapper, page/html_breadcrumbs, page/html_footer, core/messages, page/switch.
+Some blocks like content, left, right etc. are of type core/text_list. When these blocks are rendered, all their child blocks are rendered automatically without the need to call getChildHtml() method.
+
+
+
+. How to run custom MySql query in Magento?
+To write custom SQl query in magento is very easy we have to just need to call
+
+$db = Mage::getSingleton('core/resource')->getConnection('core_write');
+
+$result=$db->query("SELECT * FROM PCDSTable");
+
+
+42. How to include CMS block in template file(.phtml)?
+Access blocks content from .phtml template file by :
+
+
+echo $this->getLayout()->createBlock("cms/block")
+->setBlockId("static_block_id")->toHTML();
+
+
+
+
+43. How to add an external javascript/css file to Magento?
+
+<action method="addJs"><script>js/yourfile.js</script></action>
+ <action method="addCss"><stylesheet>css/yourstyle.css</stylesheet></action>
+
+
+
+
+ 44. How to get the Total Price of items currently in the Cart?
+
+1
+helper(‘checkout’)->formatPrice(Mage::getSingleton(‘checkout/cart’)->getQuote()->getGrandTotal()); ?>
+
+
+
+
+45. What are handles in magento (layout)?
+Handles are basically used for controlling the structure of the page like which block will be displayed and where. First level child elements of the node are called layout handles. Every page request can have several unique Handles. The handle is called for every page. handle for products belongs to virtual product type, PRODUCT_TYPE_simple is called for product details page of simple product type and PRODUCT_TYPE_virtual is called for the virtual product detail page and customer_logged_in handle is called only if customer is logged in. The muster_index_index handle is created by combining the frontName (muster), Action Controller (index), and Action Controller Action Method (index) into a single string and this handle will be called only when /muster/index/index url is accessed.
+
+
+ <layout version="0.1.0">
+ <muster_index_index>
+ <reference name="root">
+ <block type="page/html" name="root" output="toHtml" template="../somepage.phtml" />
+ </reference>
+ </muster_index_index>
+ </layout>
+
+
+
+ How to include CMS block in template file(.phtml)?
+Answers : Access blocks content from .phtml template file by :
+echo $this->getLayout()->createBlock("cms/block")
+->setBlockId("static_block_id")->toHTML();
+
+
+
+
+A Magento theme is comprised of templating files (layout, template, locale) and/or skin files (CSS, images, theme-specific JavaScript) that create the visual experience of your store. These files reside in two main directories in your Magento file system:
+
+• “App/design” directory – Files that control how the page templates are rendered
+
+• “Skin” directory – Files that control the visual aspects of the theme—CSS, images, etc
+
+
+
+Phtml files are template files that handle the output to browser. They are nothing more than html files with nested php tags.
+
+
+Layouts
+Layouts is a clever, new idea in Magento. This system lets you define a page’s, any page’s, structure through properly formed XML tags.
+Essentially, you can dictate which section of the page goes where by changing just a few attributes in an XML file. Each view or module gets it’s layout specified by its own XML file.
+
+
+Skins
+Skins are nothing but the CSS files, JavaScript files, images and other assets you’re using in the markup to create your design. Essentially all non PHP assets go here.
+
+
+
+Blocks
+Blocks are the integral building blocks of a theme and let you build your theme in a modular fashion.
+ Blocks are essentially sections which you can move around using the XML mentioned above to modify how a page is presented.
+<block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
+
+
+All template files will be in the .phtml files found in various folders under the app/design/frontend/{$interface}/{$theme}/template folder.  All layout XML files will be found in the app/design/frontend/{$interface}/{$theme}/layout folder.  All blocks will be in the app/code/{core,local,community}/{$company}/{$module}/Block folder.
+
+
+How to show price (or sth else) in Shopping Opions when browsing a category?
+
+
+Post Your Answer  Add New Question
+Go to Catalog->Attributes->Manage Attributes, edit price attribute, set Use In Layered Navigation as Filterable (with results).
+
+
+how to create a static block
+
+
+first create a static block and then use the widget section to display it.
+
+
+user table in magento is admin_user
+
+cache and session are stored in Var folder
+
+base theme path is
+
+for design-
+skin\frontend\base\default
+
+for code-
+app\design\frontend\base\default
+
+Mage path
+
+app\code\core\Mage
+
+
+cms content come from content.phtml
+
+category content
+
+page.phtml
+app\design\frontend\base\default\template\catalog\category
+
+product are listed from
+
+list.phtml
+app\design\frontend\base\default\template\catalog\product
+
+page design path
+
+app\design\frontend\base\default\template\page
+
+custom extension path
+
+app\etc\modules

@@ -1,0 +1,173 @@
+
+
+.What is the current version of joomla?
+
+As on august 2014 the current version is 3.3
+
+
+What are Joomla modules?
+
+ Modules are small content items that can be displayed anywhere that your template allows it to be displayed by assigning them to positions and pages through the module manager in the administrative interface.
+
+
+How do I remove the page title from the front page of my site?
+
+
+To remove the title from being displayed on the front page of your site, you need to change a parameter setting in the front page component.
+
+► First log into the administrative back end.
+► On the top menu click "Menu"->"mainmenu"
+► Click "Home".
+► On the right side of the screen in the parameters section, locate the “Page Title” parameter that is next to the radio buttons “Show” and “Hide”.
+
+
+
+Can content items be assigned to multiple categories or sections?
+
+
+No, content items cannot be assigned to multiple categories or sections.
+
+
+include component and module in template
+
+<jdoc:include type="component"/>
+
+single
+<jdoc:include type= "module" name = "name">
+all
+<jdoc:include type= "modules" name = "position">
+
+get base url
+
+$this->baseurl
+
+What are positions in Joomla?
+
+
+Site templates divides the "pages" displayed on a site into a series of positions, each with a different name.
+
+You can view the location of positions in your default template from the administrator go to Site =>Preview=>Inline with Positions.
+
+You can annotate your positions through the administrator (backend). Go to Site=>Template Manage=>Module Positions.
+
+Am
+az
+ingly, this will suffice! Yes, it's a very basic layout, but it will do the job. Everything else will be done by Joomla!. These lines, usually called
+jdoc statements (/Jdoc_statements), tell Joomla to include output from certain parts of the Joomla system.
+
+
+.What are components?
+
+Components are core elements of Joomla!’s functionality. These core elements include Content, Banners, Contact, News Feeds, Polls and Web Links.Content elements or applications that are usually displayed in the center of the main content area of a template. They are mini applications that can create and delete content of different types.
+Content (com_content),
+
+Modules: Module are the extension type that can show data in different forms. They mainly work with page rendering.
+In a real life example, if your website is thought of as a car (without a stereo), a new stereo in a car adds the addition of music and sound.
+
+ Banners (mod_banners), Menus (mod_menu),
+
+Plugin:  Plug-ins are event based extensions. They perform certain task when a  certain event occurs. It is basically used for triggered programming.In a real life example, think of your website as a car. A sub-woofer installed in a car changes the existing sound from your stereo and adds more bass.
+
+think of it as an extension that changes something.
+
+Editor - TinyMCE
+
+
+What is the file, where database setting are stored in Joomla cms?
+
+answer: configuration.php in the root directory.
+
+
+What is the prefix of Joomla tables by default?
+Ans: jos_
+
+
+How many tables a default joomla will have?
+Ans: 65 tables
+
+
+How to show module positions in Joomla?
+Ans: if there are no parameters, append "?tp=1" to the URL and press RETURN. For example, http://domain.com/index.php?tp=1
+     if there are already parameters in the URL, append "&tp=1" to the URL and press RETURN. For example, http://domain.com/index.php?id=17&tp=1.
+
+
+     how to get current user id in Joomla?
+ Ans: $user =& JFactory::getUser();
+$userId = $user->get( 'id' );
+echo '<input type="hidden" name="user_id" value="' . $userId . '" />';
+
+
+
+How many tables are related with users?
+
+1.  jos_users
+2.  jos_core_acl_aro
+3.  jos_core_acl_groups_aro_map
+
+
+How many files are required to built module in joomla?
+  1.mod_module_name.php
+         2.mod_module_name.xml
+
+
+
+         How many files are required to built a component in joomla?
+
+These are the compulsory files to built a component :
+-admin side
+1. component_name.xml
+2. install.component_name.php
+3. uninstall.component_name.php
+4. toolbar.component_name.php
+5. uninstall.component_name.html.php
+6. admin.component_name.php
+7. admin.component_name.html.php
+8. component_name.class.php ( if you need)
+-front
+1.component_name.php
+2.component_name.html.php
+
+
+to make a blog in joomla we use k2 extension
+
+themes and extension are installed through extension manager.
+
+themes are cutomize through template manager
+
+for making social networking site Community Builder is used.
+
+for e comm VirtueMart
+
+With Jumi * you can include php, html, JavaScript scripts into the modules position, articles, category or section descriptions and more.
+
+
+for theme integration the main files are:-
+index.php
+templatedetails.xml
+css/template.css
+
+The templateDetails.xml file is essential. Without it, your template won't be seen by Joomla!. The file holds key metadata
+(http://en.wikipedia.org/wiki/Metadata) about the template.
+The syntax of the file is differ
+
+
+>
+<files>
+<filename>index.php</filename>
+<filename>templateDetails.xml</filename>
+<folder>images</folder>
+<folder>css</folder>
+</files>
+<positions>
+<position>breadcrumb</position>
+</positions>
+
+add script
+
+$doc->addScript($this->baseurl . '/templates/' . $this->template . '/javascript/md_stylechanger.js', 'text/javascript');
+
+
+ns : 10	How do I change the favicon?
+
+The joomla favicon is stored in the /images folder. The file is called favicon.ico. By definition a favicon must be 16x16 pixels.
+

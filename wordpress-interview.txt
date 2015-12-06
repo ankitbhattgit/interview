@@ -1,0 +1,616 @@
+
+What is a content management system?
+A CMS is a web application you run on your web server to help facilitate creating a website.
+
+
+What is the purpose of Content Management System (CMS)?
+► Allow for a large number of people to contribute to and share stored data
+► Control access to data, based on user roles. User roles define what information each user can view or edit
+► Aid in easy storage and retrieval of data
+► Reduce repetitive duplicate input
+► Improve the ease of report writing
+
+
+
+What are Types of CMS?
+There are six main categories of CMS, with their respective domains of use:
+
+► Enterprise CMS (ECMS)
+► Web CMS (WCMS)
+► Document Management System (DMS)
+► Mobile Content management system
+► Component content management system
+► Media Content Management System
+
+
+
+What is WordPress?
+
+
+The WordPress web site defines WordPress as “web software you can use to create a beautiful website or blog. “ It was originally used for blogs but has since expanded to be used for full web sites, both personal and business. The main reason people prefer using WordPress now is that it is extremely easy to use, even for a beginner.
+
+
+Who is the founder of WordPress?
+The Matt Mullenweg and Mike Little is founder of wordpress.Its first release in 27 May 2003.The first version released is 0.7.
+
+
+Which version of WordPress is currently in use?
+
+WordPress 4.0 “Benny”
+
+
+What are minimum requirements to run WordPress?
+
+To run WordPress you need PHP version 5.2.4 or greater and MySQL version 5.0 or greater.
+
+
+
+What are the features of WordPress?
+Ans:- 1. Simplicity,Make wordpress to manage easily that is its very easy to use.
+
+2. Free open source ,its free to use wordpress.
+
+3. Easy theme system,In wordpress we have thousand of good free theme to use.
+
+4. Extends with plugins, we can extends the functionality of wordpress using thousands of free plugins or will create any plugin according to your requirements.
+
+5. Community,WordPress has vibrant and supportive community.
+
+6. Multilingual, wordpress is available on more than 70 languages.
+
+7. Flexibility, with wordpress you will create any type of blog or website.
+
+8. Comment, the built in comment system also make wordpress popular as you can comment your views on website.
+
+
+
+
+What tables are there in WordPress default database and what they store?
+
+
+
+wp_commentmeta – This table stores every comment published to your site and contains information, or metadata.
+
+wp_comments – This table stores the body of the comments published to your site.
+
+wp_links – This stores the name, URL, and description of all links
+you create by using the WordPress Link Manager.
+
+wp_options – This stores all the option settings that you set for WordPress after you install it, including all theme and plugin option settings.
+
+wp_postmeta – This includes all posts or pages published to your site and contains metadata.
+
+wp_posts – This table features the body of any post or page you’ve
+published to your blog, including autosaved revisions and post option settings.
+
+wp_terms – This stores the categories you’ve created for posts and links as well as tags that have been created for your posts.
+
+wp_term_relationships – This stores the relationships among the
+posts as well as the categories and tags that have been assigned to
+them.
+
+wp_term_taxonomy – WordPress has three types of taxonomies by default: category, link, and tag. This table stores the taxonomy associated for the terms stored in the wp_terms table.
+wp_usermeta – This table features metadata from every user with an account on your WordPress website.
+
+wp_users – The list of users with an account on your WordPress website is maintained within this table.
+
+
+
+
+
+Which tables are added to WordPress database when the multisite feature in WordPress is activated?
+
+WordPress adds six additional tables in the database at Multisite Installation:
+
+wp_blogs: This table stores information about each blog created in your network.
+wp_blog_versions: This table stores general information about each network blog ID, database version, and date of last update.
+wp_registration_log: This table stores information about registered users.
+wp_signups: This table stores information about user sign-ups, including all the information from the wp_registration_log table, the date the user account was activated, and the unique activation key the user accessed during the sign-up process.
+wp_site: This table stores information about your main installation
+site, including the site ID, domain, and server path.
+wp_sitemeta: This table stores all the information about the multisite configurations set after you install the multisite feature.
+
+
+How will you disable theme & plugin editing in your WordPress dashboard?
+
+You can disable theme and plugin editing by adding the following rule: define(‘DISALLOW_FILE_EDIT’, true); just after this code: define(‘DB_COLLATE’, ‘’);
+
+
+What are avatars & gravatars?
+
+An avatar is an online graphical representation of an individual. It’s a small graphic icon that people use to visually represent themselves on the web in areas they participate in conversations, such as discussion forums and blog comments. Gravatars are globally recognized avatars. They appear alongside blog comments, blog posts, and discussion forums as long as the site you’re interacting with is Gravatar-enabled.
+
+
+What If your web hosting provider doesn’t have mod_rewrite activated?
+
+In that case the custom permalinks work only if you type index.php in front of any custom permalink tags.
+
+For example, create the custom permalink tags like this:
+/index.php/%year%/%month%/%date%/%postname%/
+This format creates a permalink like this:
+
+http://yourdomain.com/index.php/2014/05/29/post-name/
+
+
+
+How pages are different from posts in WordPress?
+
+Pages, in WordPress, are different from posts because they don’t get
+archived the way your blog posts do: They aren’t categorized or tagged, don’t appear in your listing of recent blog posts or date archives, and aren’t syndicated in the RSS feeds available on your site.
+
+
+Plugin or Theme, Which loads first?
+
+Plugins load before the theme, which gives plugins some special privileges over themes and can even result in one or more plugins preventing the theme from ever loading.
+
+
+How will you display error messages during development?
+
+You can change WP_DEBUG define from false to true in wp-config.php file under your WordPress installation.
+
+
+How will you prevent automatic update to a plugin which you have modified?
+
+You can do it by Changing the name of the plugin’s directory and activating it again into your WordPress dashboard. Alternatively you can Modify the name of the plugin to achieve that.
+
+
+What is __() in WordPress?
+
+This WordPress function Make a string inside your plugin or theme translatable or retrieves the translated string from the translate() function. For example:
+
+<?php $translated = __( ‘WordPress Interview Questions’, ‘mytextdomain’ ); ?>
+
+
+How can you turn a string into slug in WordPress?
+
+By hooking the sanitize_title filter, you can convert a string to slug.  For example sanitize_title(‘WordPress Interview Question’) will produce wordpress-interview-questions.
+
+
+
+How will you hide top admin bar using  WordPress filter?
+
+ add_filter(‘show_admin_bar’, ‘__return_false’);
+
+Add this line above to your functions.php file in active theme.
+
+
+Can we run multiple domains from a single WordPress install?
+
+Yes. We can run multiple domains form a single WordPress installation and with domain mapping.
+
+
+
+How to increase the page load speed of a WordPress site?
+
+By using ajax loading to all images of the WordPress site.
+By installing cache plugins such as Super Cache and W3 Total Cache.
+By using a content delivery network (example: CloudFlare, MaxCDN).
+By minimizing the javascripts, css and html files (you can use Better WordPress Minify plugin).
+
+
+Q:6. What is the prefix of wordpress tables by default?
+
+Ans:- By default, wp_ is prefix of wordpress.
+
+
+Q:7. How you will pass a variable by value in WordPress.
+
+Ans:- Its same like we will work in c,
+
+$a = &$b
+
+
+Q:8. How can we backup or import our WordPress content from admin panel?
+
+Ans:- For import content from wordpress admin panel goes to:-
+
+WordPress admin -> Tools -> Import
+
+This will create a xml file for our posts ,comments, category etc.
+
+
+
+Q:9. What are the functions commonly used in wordpress?
+
+Ans:- WordPress have lot of inbuilt functions.Some of commonly used function in wordpress are:-
+
+1. wp_nav_menu() :- Displays a navigation menu created in wordpres admin menu.
+
+2. is_page() :- Condition for check if page is displayed. Its return true or false.
+
+3. get_excerpt() :- Displays the excerpt of the current post with read more link for display full post.
+
+4. is_category() :- Condition for check if category is displayed. Its return true or false.
+
+5. the_title():- Displays the title of the current post
+
+6. the_content():- Displays the contents of the current post.
+
+
+
+
+Q:10. What is file structure in wordpress?
+
+Ans:- The main files used in wordpres are:-
+
+1. index.php or home.php :- for home page or index page.
+
+2. single.php :- for single post page.
+
+3. page.php :- display the static pages.
+
+4. category.php :- Display the category page.
+
+5. archive.php :- For archive page display.
+
+6. tag.php :- For display the tags page.
+
+7. author.php :- For dispaly author page.
+
+8. search.php :- For display the search result page.
+
+9. 404.php :- For display 404 error page.
+
+10. taxonomy.php :- For display the taxonomy archive.
+
+11. attachment.php :- For managing the single attachments page.
+
+12. date.php :- For managing date based archive.
+
+13. header.php :- For managing top part of page.
+
+14. footer.php :- For manage bottom part of pages.
+
+
+
+
+Q:11. What are the template tags in wordpress?
+
+Ans:- A template tag is code that instructs WordPress to “do” or “get” something.Like in header.php we will use the tag bloginfo(‘name’) to get information from user profile.
+
+The the_title() template tag is used to display the post title.
+
+wp_list_cats() are for display categories.
+
+get_header() for getting header.
+
+get_sidebar() for display the sidebar on page.
+
+get_footer() for get the footer content on page.
+
+
+
+
+Q:12. What are the custom fields in wordpress?
+
+Ans:- We will add extra information to our post by using custom fields.Custom Fields are a form of meta-data that allows us to store arbitrary information with each WordPress post.
+
+Meta-data is handled with key/value pairs. The key is the name of the meta-data element. The value is the information that will appear in the meta-data list on each individual post that the information is associated with.
+
+To display the Custom Fields for each post, use the the_meta() template tag.
+
+To fetch meta values use the get_post_meta() function.
+
+For example we use custom fields:-
+
+<?php echo get_post_meta($post->ID, ‘key’, true); ?>
+
+
+
+
+Q:14. Can wordPress use cookies?
+
+Ans:- Yes, wordpress use cookies.WordPress uses cookies, or tiny pieces of information stored on your computer, to verify who you are. There are cookies for logged in users.
+
+
+
+Q:15. If we are hacked in wordpress but steps have to do for prevent it?
+
+Ans:- The various steps have to do when you hacked:-
+
+1. Change passwords for all users, especially Administrators and Editors.
+
+2. Re-install the latest version of WordPress.
+
+3. Make sure all of your plugins and themes are up-to-date.
+
+4. Install security plugins like wp security for safe from hacked.
+
+
+
+Q:16. What is the wordpress loop?
+
+Ans:- The Loop are php code used by WordPress to display posts. Using The Loop, WordPress processes each post to be displayed on the current page.
+
+For example:-
+
+<?php
+if ( have_posts() ) {
+while ( have_posts() ) {
+the_post();
+//
+// Post Content here
+//
+} // end while
+} // end if
+?>
+
+
+
+
+Q:20. How to disable wordpress comment?
+
+Ans:- Look in to dashboard under Options – Discussion. There is a checkbox there for “allow people to post comments on the article” Try unchecking that.
+Also – you can do it in the box on the right in the Write screen. That only affects the one post, though.
+
+
+7) What are the types of hooks in WordPress and mention their functions?
+
+Ans. Hooks are provided by WordPress to allow your plugin to ‘hook into’ WordPress; that is, to call functions in your plugin at specific times, and thereby set your plugin in motion. There are two types of hooks used in WordPress are Actions and Filters.
+
+1)Actions Run During a Typical Request.for example A developer may want to add code to the footer of a Theme. This could be accomplished by writing new function, then Hooking it to the wp_footer Action.
+has_action()
+add_action()
+do_action()
+do_action_ref_array()
+did_action()
+remove_action()
+remove_all_actions()
+
+
+<?php
+
+add_action( 'wp_head', 'head_func' );
+
+function head_func () {
+
+echo "<div>This is test</div>";
+
+}
+
+?>
+
+
+2)Filters are the hooks that WordPress launches to modify text of various types before adding it to the database or sending it to the browser screen.
+has_filter()
+add_filter()
+apply_filters()
+apply_filters_ref_array()
+current_filter()
+remove_filter()
+remove_all_filters()
+
+
+
+<?php add_filter( 'the_content', 'webs_expert' );
+
+function head_func( $content ) {
+
+if ( is_single() ) {
+
+$content .= '<div>This is test</div>' . " ";
+
+}
+
+return $content;
+
+}
+
+?>
+
+
+
+
+10) What are the rules that you have to follow for wordpress plugin development?
+
+Create a unique name
+Create the plugin’s folder
+Create a sub-folder for PHP files,  translations and assets
+Create the main plug-in file and fill in header information
+Create activation and de-activation functions
+Create an uninstall script
+Create a readme.txt file
+To detect paths to plugin file use proper constants and functions
+
+
+32. Run Any Query on the Database for WordPress
+
+The query function allows you to execute any SQL query on the WordPress database. It is best to use a more specific function (see below), however, for SELECT queries.
+
+ <?php $wpdb->query('query'); ?>
+
+
+
+ Why can’t I delete the uncategorized Category?
+
+Any Category with a non-zero value for # of Posts in the Administration > Manage > Categories cannot be deleted. The uncategorized Category might be assigned to some Posts, but all Pages are assigned the uncategorized Category. So even though there may be no posts assigned to the uncategorized Category, Pages are included in the count of # of Posts.
+
+
+How to hide Directory Browsing in WordPress from server using .htaccess file?
+
+By default when your web server does not find an index file (i.e. a file like index.php or index.html), it automatically displays an index page showing the contents of the directory.SO now if you want to hide this add below code in .htaccess file.
+
+
+Options -Indexes
+
+
+
+How to Change the Length of the Default WordPress Excerpt.
+Ans The default WordPress excerpt is 55 words long. By modified bit to your functions.php file you can change the length to as you required.Below is the code if we need 60 length.
+
+
+function new_excerpt_length($length) {
+    return 42;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+
+
+
+What is child theme? Why we used it?
+Ans A WordPress child theme is a WordPress theme that inherits its functionality from its parent WordPress theme.Child themes are often used when you want to customize or tweak an existing WordPress theme without losing the ability to upgrade that theme.
+Advantage is child theme is Safe Updates,Easy to Extend,Fallback Safe
+
+
+
+Que 15 What is the Basic Difference Between Posts vs. Pages.
+Ans. Posts are timely vs. Pages are timeless.
+Posts are social vs. Pages are NOT.
+Posts can be categorized vs. Pages are hierarchical.
+Posts are included in RSS feed vs. Pages are not.
+Pages have custom template feature vs. Posts do not.
+
+
+ how to store the post title in variable?
+  $page_title = get_the_title($post->post_parent);
+
+
+
+  How to Generates a random password of the specified length in WordPress?
+<?php generate_random_password($len) ?>
+
+
+ How to get the postid in wordpress?
+
+ we can get the postid
+
+  global $wp_query;
+
+  $postid = $wp_query->post->ID;
+
+  echo $postid;
+
+
+
+  2. How to get the post meta value in worpdress?
+
+ we can get the post meta value throw postid.
+
+ for example here post Custom Field name : comapny name
+
+  get_post_meta($postid, 'Company name', true);
+
+
+
+  3. How to check if the post has a Post Thumbnail assigned to it.
+
+
+
+ if ( has_post_thumbnail() )  // check if the post has a Post Thumbnail assigned to it.
+
+       {
+
+     the_post_thumbnail();
+
+       }
+
+
+
+   how to get the wordpress featued image and how to change the image width and height.
+
+ we can get the featurd image wordpress function
+
+  the_post_thumbnail();//here we can get the wordpress featured image thumbnail
+
+
+    the_post_thumbnail( array(100,100) );     // here we can change the image size.
+
+
+
+
+    5 How to get the specified category post only in wordpress?
+
+ here we can get the all post in category id based.
+
+ <?php query_posts("cat=106 && per_page=5");// here 106 is the category id  ?>
+
+ <?php while ( have_posts() ) : the_post(); ?>
+
+ <h3><?php the_title(); // here we can get the post title. this is the wordpress free defind function ?></h3>
+
+ <?php  endwhile; ?>
+
+
+
+
+
+
+
+ how to get current user information in wordpress
+<?php
+    $current_user = wp_get_current_user();
+    /**
+     * @example Safe usage: $current_user = wp_get_current_user();
+     * if ( !($current_user instanceof WP_User) )
+     *     return;
+     */
+    echo 'Username: ' . $current_user->user_login . '<br />';
+    echo 'User email: ' . $current_user->user_email . '<br />';
+    echo 'User first name: ' . $current_user->user_firstname . '<br />';
+    echo 'User last name: ' . $current_user->user_lastname . '<br />';
+    echo 'User display name: ' . $current_user->display_name . '<br />';
+    echo 'User ID: ' . $current_user->ID . '<br />';
+
+
+
+
+    how to insert the values in wordpress database.?
+insert query to use store the values in wordpress database.
+
+ global $wpdb;
+ $wpdb->insert($table_name,array('author_id' =>$author_id,'author_name' =>$author_name,'author_email'=>$author_email,'created_at'=>current_time('mysql', 1)),array('%d','%s','%s','%s'));
+
+
+
+
+  how to get the single value in wordpress database.?
+using get_var
+
+example:
+
+$table_name = $wpdb->prefix . "posts";
+
+$post_content = $wpdb->get_var($wpdb->prepare( "SELECT post_content FROM $table_name WHERE post_status = %s",'publish'));
+
+echo $post_content;
+
+
+
+
+how to write the short code in wordpress php file
+
+allow people to execute code inside WordPress posts, pages, and widgets without writing any code directly. This allows you to embed files or create objects that would normally require a lot of code in just one single line.
+
+using do_shortcode function inside of php echo tag
+
+a very simple solution is to use the do_shortcode function inside a PHP echo tag.
+for example <?php do_shortcode("[shortcode]"); ?>
+
+short code is used in wordpress post or page and text box widget and php file. this
+
+
+
+create template for post for category
+
+
+The Template Hierarchy specifies that WordPress will use the first Template file it finds in your current Theme's directory from the following list:
+
+category-slug.php
+category-ID.php
+category.php
+archive.php
+index.php
+That is, if you do not have a category-slug.php (lets say category-news.php), WordPress will check for a category-ID.php (like category-6.php), and so on.
+
+So, if you want to make the Category whose ID number is 6 look different from what it is currently (and different from other Category pages), you would want to create a category-6.php file.
+
+ajax
+
+wp_enqueue_script( 'ajax-script', plugins_url( '/js/my_query.js', __FILE__ ), array('jquery') );
+
+    // in JavaScript, object properties are accessed as ajax_object.ajax_url, ajax_object.we_value
+    wp_localize_script( 'ajax-script', 'ajax_object',
+            array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'we_value' => 1234 ) );
+
+            in js
+
+            url: ajax_object.ajax_url

@@ -1,0 +1,626 @@
+
+
+SQL stands for Structured Query Language. SQL is a programming Language designed specially for managing data in Relational Database Management System (RDBMS).
+
+
+Answer : A Relational Database Management System (RDBMS) is the most widely used database Management System based on the Relational Database model.
+Features of RDBMS
+Stores data in tables.
+Tables have rows and column.
+Creation and Retrieval of Table is allowed through SQL.
+
+INSERT INTO `xxzc`(`xZxs`, `xzxsssss`, `xzzx`, `xzxsss`) VALUES ([value-1],[value-2],[value-3],[value-4])
+PDATE `xxzc` SET `xZxs`=[value-1],`xzxsssss`=[value-2],`xzzx`=[value-3],`xzxsss`=[value-4] WHERE id = 1
+DELETE FROM `xxzc` WHERE 1
+
+
+
+3. What is Data Mining?
+Answer : Data Mining is a subcategory of Computer Science which aims at extraction of information from set of data and transform it into Human Readable structure, to be used later.
+
+
+4. What is an ERD?
+Answer : ERD stands for Entity Relationship Diagram. Entity Relationship Diagram is the graphical representation of tables, with the relationship between them.
+
+
+What is the difference between Primary Key and Unique Key?
+Answer : Both Primary and Unique Key is implemented for Uniqueness of the column. Primary Key creates a clustered index of column where as an Unique creates unclustered index of column. Moreover, Primary Key doesn’t allow NULL value, however Unique Key does allows one NULL value.
+
+
+How to store picture file in the database. What Object type is used?
+Answer : Storing Pictures in a database is a bad idea. To store picture in a database Object Type ‘Blob’ is recommended.
+
+
+7. What is Data Warehousing?
+Answer : A Data Warehousing generally refereed as Enterprise Data Warehousing is a central Data repository, created using different Data Sources.
+
+
+8. What are indexes in a Database. What are the types of indexes?
+Answer : Indexes are the quick references for fast data retrieval of data from a database. There are two different kinds of indexes.
+Clustered Index
+Only one per table.
+Faster to read than non clustered as data is physically stored in index order.
+Non­clustered Index
+Can be used many times per table.
+Quicker for insert and update operations than a clustered index.
+
+
+
+
+9. How many TRIGGERS are possible in MySql?
+Answer : There are only six triggers are allowed to use in MySQL database and they are.
+Before Insert
+After Insert
+Before Update
+After Update
+Before Delete
+After Delete
+
+
+What is DDL, DML and DCL ?
+Data Definition Language deals with database schemas and descriptions of how the data should reside in the database, therefore language statements like CREATE TABLE or ALTER TABLE belong to DDL. DML deals with data manipulation, and therefore includes most common SQL statements such SELECT, INSERT, etc. Data Control Language includes commands such as GRANT, and mostly concerns with rights, permissions and other controls of the database system.
+
+
+
+If the value in the column is repeatable, how do you find out the unique values?
+Use DISTINCT in the query, such as SELECT DISTINCT user_firstname FROM users; You can also ask for a number of distinct values by saying SELECT COUNT (DISTINCT user_firstname) FROM users;
+
+
+How do you return the a hundred books starting from 25th?
+SELECT book_title FROM books LIMIT 25, 100. The first number in LIMIT is the offset, the second is the number.
+
+
+You wrote a search engine that should retrieve 10 results at a time, but at the same time you’d like to know how many rows there’re total. How do you display that to the user?
+SELECT SQL_CALC_FOUND_ROWS page_title FROM web_pages LIMIT 1,10; SELECT FOUND_ROWS(); The second query (not that COUNT() is never used) will tell you how many results there’re total, so you can display a phrase "Found 13,450,600 results, displaying 1-10". Note that FOUND_ROWS does not pay attention to the LIMITs you specified and always returns the total number of rows affected by query.
+
+
+How would you write a query to select all teams that won either 2, 4, 6 or 8 games?
+SELECT team_name FROM teams WHERE team_won IN (2, 4, 6, 8)
+
+
+How would you select all the users, whose phone number is null?
+SELECT user_name FROM users WHERE ISNULL(user_phonenumber);
+
+What does this query mean: SELECT user_name, user_isp FROM users LEFT JOIN isps USING (user_id) ?
+It’s equivalent to saying SELECT user_name, user_isp FROM users LEFT JOIN isps WHERE users.user_id=isps.user_id
+
+
+How do you find out which auto increment was assigned on the last insert?
+
+SELECT LAST_INSERT_ID() will return the last value assigned by the auto_increment function. Note that you don’t have to specify the table name.
+
+
+On executing the DELETE statement I keep getting the error about foreign key constraint failing. What do I do?
+What it means is that so of the data that you’re trying to delete is still alive in another table.
+
+
+When would you use ORDER BY in DELETE statement?
+When you’re not deleting by row ID. Such as in DELETE FROM techpreparation_com_questions ORDER BY timestamp LIMIT 1. This will delete the most recently posted question in the table techpreparation_com_questions.
+
+
+
+
+Different Types of Tables in Mysql?
+There are Five Types Tables in Mysql
+1)INNODB
+2)MYISAM
+3)MERGE
+4)HEAP
+5)ISAM
+
+
+MyISAM is the default storage engine as of MySQL 3.23.
+
+
+What is the maximum length of a table name, a database name, or a field name in MySQL?
+Database name: 64 characters
+Table name: 64 characters
+Column name: 64 characters
+
+
+
+Explain difference between delete, truncate and drop command in Mysql.
+
+
+ DELETE
+DELETE command in mysql is used to remove rows from a table. We can use where clause  to only remove some rows. If we do not  specify any where clause , all rows will be removed.DELETE operations can be rolled back.Structure is maintained of the table.
+ Syntax : DELETE FROM table_name WHERE column_name=value;
+TRUNCATE
+TRUNCATE command in mysql removes all rows from the table. The operation cannot be rolled back and no triggers will be fired.  TRUNCATE is faster than DELETE.You can not use where clause with truncate.
+Syntax:  TRUNCATE TABLE table_name;
+DROP
+The DROP command in  mysql removes the table from the database. All the table rows, indexes and privileges will  be removed. No triggers will be fired and the operation cannot be rolled back.It is used delete data as well as structure of the table.
+
+
+
+
+How will you obtain list of all the databases?
+
+show databases;
+
+
+ How will you switch to a database, and start working on that?
+
+ use cloud;
+
+
+ How will you get the list of all the tables, in a database?
+
+  show tables;
+
+
+  How will you get the Field Name and Type of a MySql table?
+
+  describe oc_users;
+
+
+  How will you delete a table?
+
+
+  drop table lookup;
+
+
+  How will you delete a database?
+
+
+   drop database a1;
+
+
+   You need to know total number of row entry in a table. How will you achieve it?
+
+
+select count(*) from Tables;
+
+
+
+How can you see all indexes defined for a table?
+SHOW INDEX FROM techpreparation_questions;
+
+How would you change a column from VARCHAR(10) to VARCHAR(50)?
+ALTER TABLE techpreparation_questions CHANGE techpreparation_content techpreparation_CONTENT VARCHAR(50).
+
+How would you delete a column?
+ALTER TABLE techpreparation_answers DROP answer_user_id.
+
+
+
+Explain ACID properties?
+
+
+Atomicity
+Modification on the data in the database either fail or succeed. The beginning of such a modification starts with a transaction and ends when a transaction finishes (either by a commit or a rollback). A software crash entails an implicit rollback.
+
+Consistency
+Only valid data (valid according to integrity constraints) may be committed.
+
+Isolation
+One transaction does not interfere with another. The ‘executor’ of a transaction has the feeling that he has the entire database for himself.
+
+Durability
+A committed transaction will not be lost.
+
+
+
+Explain advantages of MyISAM over InnoDB?
+
+
+InnoDB uses row locking, MyISAM uses table locking, therefore…
+InnoDB is slower when it comes to SELECT
+InnoDB enforces referential integrity (which is as very good thing)
+InnoDB allows transaction
+
+
+
+Find the Nth Highest Salary in a table.
+
+
+	SELECT Salary FROM employee ORDER BY salary DESC LIMIT N-1,1
+
+
+this solution won’t return correct value if there are two records for Nth Highest Salary.
+
+
+SELECT * FROM Employee E1 WHERE (N-1) = ( SELECT COUNT(DISTINCT(E2.Salary)) FROM Employee E2 WHERE E2.Salary > E1.Salary)
+
+
+
+        : Suppose we want to find second highest salary in above table.We process each row one by one and check for N-1 distinct(Here 2-1 = 1 in this example ) salaries greater than current salary.We start with first row with Salary equal to 150 since 100 and 120 both are less than 150 so there is no rows with salary greater than 150 so sub query will return 0 which is not equal to 1.Next We process second row with salary equal to 100.Both 150 and 120 are greater than 100 so there are two rows with salary greater than 100 so right sub query will return 2 which is also not equal to 1. Now we come to third row with salary equal to 120. As there are only one row with salary greater than 120 so sub query will return 1 which is also equal to N-1 so we print this row.
+        \
+
+
+
+   Find second highest salary in employee table
+
+
+  SELECT name, salary FROM employees ORDER BY salary DESC LIMIT 1 , 1
+
+
+
+SELECT name, salary FROM EMPLOYEE WHERE salary = (SELECT MAX(salary) FROM EMPLOYEE WHERE salary < (SELECT MAX(salary) FROM EMPLOYEE))
+
+
+
+. What is the default port for MySQL Server?
+
+The default port for MySQL server is 3306.
+
+
+
+6.  What are the advantages of MySQL when compared with Oracle?
+
+MySQL is open source software which is available at any time and has no cost involved.
+MySQL is portable
+GUI with command prompt.
+Administration is supported using MySQL Query Browser
+
+
+10. What is the usage of ENUMs in MySQL?
+
+ENUM is a string object used to specify set of predefined values and that can be used during table creation.
+
+Create table size(name ENUM('Small', 'Medium','Large');
+
+
+
+. Difference between CHAR and VARCHAR?
+
+Following are the differences between CHAR and VARCHAR:
+
+CHAR column length is fixed to the length that is declared while creating table. The length value ranges from 1 and 255
+When CHAR values are stored then they are right padded using spaces to specific length. Trailing spaces are removed when CHAR values are retrieved.
+
+
+13. Give string types available for column?
+
+The string types are:
+
+SET
+BLOB
+ENUM
+CHAR
+TEXT
+VARCHAR
+
+
+14. How to get current MySQL version?
+
+SELECT VERSION ();
+ 5.6.20
+
+
+
+ What is the difference between primary key and candidate key?
+
+Every row of a table is identified uniquely by primary key. There is only one primary key for a table.
+Primary Key is also a candidate key. By common convention, candidate key can be designated as primary and which can be used for any foreign key references.
+
+
+3. What are federated tables?
+
+Federated tables which allow access to the tables located on other databases on other servers.
+
+
+28. What do you mean by % and _ in the LIKE statement?
+
+% corresponds to 0 or more characters, _ is exactly one character in the LIKE statement.
+
+
+3. What is the difference between the LIKE and REGEXP operators?
+
+LIKE and REGEXP operators are used to express with ^ and %.
+
+SELECT * FROM employee WHERE emp_name REGEXP "^b";
+SELECT * FROM employee WHERE emp_name LIKE "%b";
+
+
+
+3. How to display top 50 rows?
+
+
+SELECT * FROM LIMIT 0,50;
+
+
+What is the different between NOW() and CURRENT_DATE()?
+
+NOW () command is used to show current year,month,date with hours,minutes and seconds.
+
+CURRENT_DATE() shows current year,month and date only.
+
+
+
+49. What are all the Common SQL Function?
+
+CONCAT(A, B) – Concatenates two string values to create a single string output. Often used to combine two or more fields into one single field.
+
+FORMAT(X, D) – Formats the number X to D significant digits.
+
+CURRDATE(), CURRTIME() – Returns the current date or time.
+
+NOW() – Returns the current date and time as one value.
+
+MONTH(), DAY(), YEAR(), WEEK(), WEEKDAY() – Extracts the given data from a date value.
+
+HOUR(), MINUTE(), SECOND() – Extracts the given data from a time value.
+
+DATEDIFF(A, B) – Determines the difference between two dates and it is commonly used to calculate age
+
+SUBTIMES(A, B) – Determines the difference between two times.
+
+FROMDAYS(INT) – Converts an integer number of days into a date value.
+
+
+
+Select first 3 characters of FIRST_NAME from EMPLOYEE
+
+
+: select substring(FIRST_NAME,1,3) from employee
+
+
+
+. Get position of 'o' in name 'John' from employee table
+
+
+Select LOCATE('o',FIRST_NAME) from employee where first_name='John'
+
+
+
+Get FIRST_NAME from employee table after removing white spaces from right side
+
+select RTRIM(FIRST_NAME) from employee
+
+
+. Get length of FIRST_NAME from employee table
+
+
+Query :select length(FIRST_NAME) from employee
+
+
+12. Get First_Name from employee table after replacing 'o' with '$'
+
+select REPLACE(FIRST_NAME,'o','$') from employee
+
+
+13. Get First_Name and Last_Name as single column from employee table separated by a '_'
+
+
+ Select concat(FIRST_NAME,'_',LAST_NAME) from EMPLOYEE
+
+
+
+  15. Get all employee details from the employee table order by First_Name Ascending
+Select * from employee order by FIRST_NAME asc
+
+
+
+17. Get all employee details from the employee table order by First_Name Ascending and Salary descending
+Select * from employee order by FIRST_NAME asc,SALARY desc
+
+
+20. Get employee details from employee table whose employee name are not “John” and “Roy”
+
+Select * from EMPLOYEE where FIRST_NAME not in ('John','Roy')
+
+
+
+21. Get employee details from employee table whose first name starts with 'J'
+
+Select * from EMPLOYEE where FIRST_NAME like 'J%'
+
+
+
+Get employee details from employee table whose first name contains 'o'
+
+Select * from EMPLOYEE where FIRST_NAME like '%o%'
+
+
+23. Get employee details from employee table whose first name ends with 'n'
+
+Select * from EMPLOYEE where FIRST_NAME like '%n'
+
+
+Get employee details from employee table whose first name ends with 'n' and name contains 4 letters
+
+Select * from EMPLOYEE where FIRST_NAME like '___n' (Underscores)
+
+
+
+28. Get employee details from employee table whose Salary between 500000 and 800000
+
+Select * from EMPLOYEE where Salary between 500000 and 800000
+
+
+
+29. Get employee details from employee table whose name is 'John' and 'Michael'
+
+Select * from EMPLOYEE where FIRST_NAME in ('John','Michael')
+
+
+Get employee details from employee table whose joining year is “2013”
+
+
+ Select * from EMPLOYEE where year(joining_date)='2013'
+
+
+
+ Get employee details from employee table whose joining month is “January”
+
+
+ Select * from EMPLOYEE where month(joining_date)='01'
+
+
+
+  How to fetch data that are common in two query results ?
+
+select * from EMPLOYEE where EMPLOYEE_ID INTERSECT select * from EMPLOYEE where EMPLOYEE_ID <4
+
+
+
+5. Insert into employee table Last Name with " ' " (Single Quote - Special Character)
+
+Tip - Use another single quote before special character
+Insert into employee (LAST_NAME) values ('Test''')
+
+
+
+Select TOP N salary from employee table
+
+
+ select * from employee order by salary desc limit N
+
+
+
+ . Select 2nd Highest salary from employee table
+
+
+ , select min(SALARY) from (select * from employee order by salary desc limit 2) a
+
+
+
+ Select Nth Highest salary from employee table
+
+
+  select min(SALARY) from (select * from employee order by salary desc limit N) a
+
+
+
+  69. Select First_Name,LAST_NAME from employee table as separate rows
+
+select FIRST_NAME from EMPLOYEE union select LAST_NAME from EMPLOYEE
+
+
+
+3. Write syntax to set EMPLOYEE_ID as primary key in employee table
+
+ALTER TABLE EMPLOYEE add CONSTRAINT EMPLOYEE_PK PRIMARY KEY(EMPLOYEE_ID)
+
+
+74. Write syntax to set 2 fields(EMPLOYEE_ID,FIRST_NAME) as primary key in employee table
+
+ALTER TABLE EMPLOYEE add CONSTRAINT EMPLOYEE_PK PRIMARY KEY(EMPLOYEE_ID,FIRST_NAME)
+
+
+
+Write syntax to drop primary key on employee table
+
+Alter TABLE EMPLOYEE drop CONSTRAINT EMPLOYEE_PK;
+
+
+
+Explain the difference between mysql and mysql interfaces in PHP?
+mysqli is the object-oriented version of mysql library functions.
+
+
+Explain advantages of InnoDB over MyISAM?
+Row-level locking, transactions, foreign key constraints and crash recovery.
+
+
+
+
+- Stored Procedures and Triggers
+
+A stored procedure is a set of SQL commands that can be compiled and stored in the server. Once this has been done, clients don't need to keep reissuing the entire query but can refer to the stored procedure. This provides better performance because the query has to be parsed only once, and less information needs to be sent between the server and the client.
+
+A trigger is a stored procedure that is invoked when a particular event occurs. For example, you can install a stored procedure that is triggered each time a record is deleted from a transaction table and that automatically deletes the corresponding customer from a customer table when all his transactions are deleted.
+
+
+
+foreign key
+
+
+ foreign key is a field (or collection of fields) in one table that uniquely identifies a row of another table.In other words, a foreign key is a column or a combination of columns that is used to establish and enforce a link between two tables.Since the purpose of the foreign key is to identify a particular row of the referenced table, it is generally required that the foreign key is equal to the candidate key in some row of the primary table, or else have no value (the NULL value.[2]). This rule is called a referential integrity constraint between the two tables.Foreign key simply requires that the value in that field must exist first in a differnt table (the parent table). That is all an FK is by definition.
+
+
+ What Is View?
+
+
+A view is a logical table defined by a query statement.
+
+
+CREATE VIEW faqComment AS SELECT f.id, f.title,
+f.description, c.message FROM faq f, comment c
+WHERE f.id = c.faqID;
+
+
+How many tables will create when we create table, what are they?
+
+
+<p>
+  The ‘.frm’ file stores the table definition.<br>
+  The data file has a ‘.MYD’ (MYData) extension.<br>
+  The index file has a ‘.MYI’ (MYIndex) extension,</p>
+
+
+  Explain Normalization concept?
+
+  A correctly designed database that is created from an ER model. There are different types or levels of normalization, and a third-normal form database is generally regarded as being an acceptably designed relational database.The  higher level of normalization cannot be achieved until the previous levels have been achieved .
+
+  The First Normal Form involves removal of redundant data from horizontal rows. We want to ensure that there is no duplication of data in a given row, and that every column stores the least amount of information possible (making the field atomic).
+
+  Second Normal Form. Where the First Normal Form deals with redundancy of data across a horizontal row, Second Normal Form (or 2NF) deals with redundancy of data in vertical columns.
+
+  In Third Normal Form we are looking for data in our tables that is not fully dependant on the primary key, but dependant on another value in the table
+
+
+
+  What is the difference between GROUP BY and ORDER BY in Sql?
+
+  ORDER BY Tels DBMS according to what columns it should sort the result. If two rows will hawe the same value in col1 it will try to sort them according to col2 and so on.
+
+  GROUP BY Tels DBMS to group results with same value of column col1. You can use COUNT(col1), SUM(col1), AVG(col1) with it, if you want to count all items in group, sum all values or view average
+
+
+
+  How can we optimize or increase the speed of a MySQL select query?
+
+  first of all instead of using select * from table1, use select column1, column2, column3.. from table1. Look for the opportunity to introduce index in the table you are querying. use limit keyword if you are looking for any specific number of rows from the result set.
+
+
+  Joins
+
+SQL joins are used to query data from two or more tables, based on a relationship between certain columns in these tables.Here we have two tables customer and items and we are going  to  perform different types of  joins on them.
+
+
+
+2.Inner or Equi join-It returns rows when there is at least one match in both tables.
+
+select customer.id,customer.name,items.name as product_name,items.price from customer INNER JOIN items ON customer.id=items.cust_id
+
+
+3. LEFT JOIN-The LEFT JOIN keyword returns all rows from the left table , even if there are no matches in the right table .
+
+select customer.id,customer.name,items.name as product_name,items.price from customer LEFT OUTER JOIN items ON customer.id=items.cust_id
+
+
+4.RIGHT JOIN-It returns all the rows from the right table , even if there are no matches in the left table .
+
+select customer.id,customer.name,items.name as product_name,items.price from customer Right OUTER JOIN items ON customer.id=items.cust_id
+
+
+33) What is the difference between mysql_fetch_object() and mysql_fetch_array()?
+
+The mysql_fetch_object() function collects the first single matching record where mysql_fetch_array() collects all matching records from the table in an array.
+
+What are the advantages of stored procedures, triggers, indexes?
+Answer : 58 A stored procedure is a set of SQL commands that can be compiled and
+stored in the server. Once this has been done, clients don't need to
+keep re-issuing the entire query but can refer to the stored procedure.
+This provides better overall performance because the query has to be
+parsed only once, and less information needs to be sent between the
+server and the client. You can also raise the conceptual level by having
+libraries of functions in the server. However, stored procedures of
+course do increase the load on the database server system, as more of
+the work is done on the server side and less on the client (application)
+side.Triggers will also be implemented. A trigger is effectively a type of
+stored procedure, one that is invoked when a particular event occurs.
+For example, you can install a stored procedure that is triggered each
+time a record is deleted from a transaction table and that stored
+procedure automatically deletes the corresponding customer from a
+customer table when all his transactions are deleted.Indexes are used to find rows with specific column values quickly.
+Without an index, MySQL must begin with the first row and then read
+through the entire table to find the relevant rows. The larger the
+table, the more this costs. If the table has an index for the columns in
+question, MySQL can quickly determine the position to seek to in the
+middle of the data file without having to look at all the data. If a
+table has 1,000 rows, this is at least 100 times faster than reading
+sequentially. If you need to access most of the rows, it is faster to
+read sequentially, because this minimizes disk seeks.

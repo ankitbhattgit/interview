@@ -1,0 +1,280 @@
+
+
+version 2.1
+
+
+. What does dollar sign ($) means in jQuery?
+
+Ans: Dollar Sign is nothing but it's an alias for JQuery.
+
+
+0. Can we have multiple document.ready() function on the same page?
+
+Ans: YES.
+
+
+1. Can we use our own specific character in the place of $ sign in jQuery?
+
+Ans: Yes. It is possible using jQuery.noConflict().
+
+
+
+. What is jQuery.noConflict?
+
+Ans: As other client side libraries like MooTools, Prototype can be used with jQuery and they also use $() as their global function and to define variables. This situation creates conflict as $() is used by jQuery and other library as their global function. To overcome from such situations, jQuery has introduced jQuery.noConflict().
+
+
+4. Is there any difference between body onload() and document.ready() function?
+
+Ans: document.ready() function is different from body onload() function for 2 reasons.
+We can have more than one document.ready() function in a page where we can have only one body onload function.
+document.ready() function is called as soon as DOM is loaded where body.onload() function is called when everything gets loaded on the page that includes DOM, images and all associated resources of the page.
+
+
+15. What is the difference between .js and .min.js?
+
+Ans: jQuery library comes in 2 different versions Production and Deployment. The deployment version is also known as minified version. So .min.js is basically the minified version of jQuery library file
+
+Asynchronous means that the script will send a request to the server, and continue it's execution without waiting for the reply. As soon as reply is received a browser event is fired, which in turn allows the script to execute associated actions,Its asynchronous in that it doesn't lock up the browser. If you fire an Ajax request, the user can still work while the request is waiting for a response. When the server returns the response, a callback runs to handle it.
+
+. Why there are two different version of jQuery library?
+
+Ans: jQuery library comes in 2 different versions.
+Production
+Deployment
+The production version is quite useful at development time as jQuery is open source and if you want to change something then you can make those changes in production version. But the deployment version is minified version or compressed version so it is impossible to make changes in it. Because it is compressed, so its size is very less than the production version which affects the page load time.
+
+
+. What are selectors in jQuery and how many types of selectors are there?
+
+Ans: To work with an element on the web page, first we need to find them. To find the html element in jQuery we use selectors. There are many types of selectors but basic selectors are:
+
+Name: Selects all elements which match with the given element Name.
+#ID: Selects a single element which matches with the given ID
+.Class: Selects all elements which match with the given Class.
+Universal (*): Selects all elements available in a DOM.
+Multiple Elements E, F, G: Selects the combined results of all the specified selectors E, F or G.
+Attribute Selector: Select elements based on its attribute value.
+
+
+How do you select element by ID in jQuery?
+
+Ans: To select element use ID selector. We need to prefix the id with "#" (hash symbol). For example, to select element with ID "txtName", then syntax would be,
+ Collapse | Copy Code
+$('#txtName')
+
+
+
+How to select element having a particular class (".selected")?
+
+Ans: $('.selected'). This selector is known as class selector. We need to prefix the class name with "." (dot).
+
+Q25. What does $("div.parent") will select?
+
+Ans: All the div element with parent class.
+
+Q26. What are the fastest selectors in jQuery?
+
+Ans: ID and element selectors are the fastest selectors in jQuery.
+
+
+
+
+Difference between $(this) and 'this' in jQuery?
+
+Ans: this and $(this) refers to the same element. The only difference is the way they are used. 'this' is used in traditional sense, when 'this' is wrapped in $() then it becomes a jQuery object and you are able to use the power of jQuery.
+
+
+
+
+Q31. How do you check if an element is empty?
+
+Ans: There are 2 ways to check if element is empty or not. We can check using ":empty" selector.
+ Collapse | Copy Code
+$(document).ready(function(){
+    if ($('#element').is(':empty')){
+       //Element is empty
+  }
+});
+And the second way is using the "$.trim()" method.
+ Collapse | Copy Code
+$(document).ready(function(){
+    if($.trim($('#element').html())=='') {
+       //Element is empty
+  }
+});
+
+
+
+
+Q32. How do you check if an element exists or not in jQuery?
+
+Ans: Using jQuery length property, we can ensure whether element exists or not.
+ Collapse | Copy Code
+$(document).ready(function(){
+    if ($('#element').length > 0){
+       //Element exists
+  });
+});
+
+
+
+
+. What is the use of jquery .each() function?
+
+Ans: The $.each() function is used to iterate over a jQuery object. The $.each() function can be used to iterate over any collection, whether it is an object or an array.
+
+
+
+. What is the difference between jquery.size() and jquery.length?
+
+Ans: jQuery .size() method returns number of element in the object. But it is not preferred to use the size() method as jQuery provide .length property and which does the same thing. But the .length property is preferred because it does not have the overhead of a function call.
+
+
+
+
+ What is the difference between eq() and get() methods in jQuery?
+
+Ans: eq() returns the element as a jQuery object. This method constructs a new jQuery object from one element within that set and returns it. That means that you can use jQuery functions on it.
+
+get() return a DOM element. The method retrieve the DOM elements matched by the jQuery object. But as it is a DOM element and it is not a jQuery-wrapped object. So jQuery functions can't be used.
+
+
+
+How do you implement animation functionality?
+
+Ans: The .animate() method allows us to create animation effects on any numeric CSS property. This method changes an element from one state to another with CSS styles. The CSS property value is changed gradually, to create an animated effect.
+
+Syntax is:
+ Collapse | Copy Code
+(selector).animate({styles},speed,easing,callback)
+
+
+
+
+Q41. What is the difference between .empty(), .remove() and .detach() methods in jQuery?
+
+Ans: All these methods .empty(), .remove() and .detach() are used for removing elements from DOM but they all are different.
+
+.empty(): This method removes all the child element of the matched element where remove() method removes set of matched elements from DOM.
+
+.remove(): Use .remove() when you want to remove the element itself, as well as everything inside it. In addition to the elements themselves, all bound events and jQuery data associated with the elements are removed.
+
+.detach(): This method is the same as .remove(), except that .detach() keeps all jQuery data associated with the removed elements. This method is useful when removed elements are to be reinserted into the DOM at a later time.
+
+
+
+
+Explain .bind() vs .live() vs .delegate() vs .on()
+
+Ans: All these 4 jQuery methods are used for attaching events to selectors or elements. But they all are different from each other.
+
+.bind(): This is the easiest and quick method to bind events. But the issue with bind() is that it doesn't work for elements added dynamically that matches the same selector. bind() only attach events to the current elements not future element. Above that it also has performance issues when dealing with a large selection.
+
+.live(): This method overcomes the disadvantage of bind(). It works for dynamically added elements or future elements. Because of its poor performance on large pages, this method is deprecated as of jQuery 1.7 and you should stop using it. Chaining is not properly supported using this method.
+
+.delegate(): The .delegate() method behaves in a similar fashion to the .live() method, but instead of attaching the selector/event information to the document, you can choose where it is anchored and it also supports chaining.
+
+.on(): Since live was deprecated with 1.7, so new method was introduced named ".on()". This method provides all the goodness of previous 3 methods and it brings uniformity for attaching event handlers.
+
+
+
+
+What is wrong with this code line "$('#myid.3').text('blah blah!!!');"
+
+Ans: The problem with above statement is that the selectors is having meta characters and to use any of the meta-characters ( such as !"#$%&'()*+,./:;<=>?@[\]^`{|}~ ) as a literal part of a name, it must be escaped with with two backslashes: \\. For example, an element with id="foo.bar", can use the selector $("#foo\\.bar").
+
+
+
+Q47. What is event.PreventDefault?
+
+Ans: The event.preventDefault() method stops the default action of an element from happening. For example, Prevents a link from following the URL.
+
+
+
+
+In what situation you would use multiple version of jQuery and how would you include them?
+
+Ans: Well, it is quite possible that the jQuery plugins which are used are dependent on older version but for your own jQuery code, you would like to use newer version. So because of this dependency, multiple version of jQuery may required sometimes on single page.
+
+Below code shows how to include multiple version of jQuery.
+ Collapse | Copy Code
+<script type='text/javascript' src='js/jquery_1.9.1.min.js'></script>
+
+<script type='text/javascript'>
+ var $jq = jQuery.noConflict();
+</script>
+
+<script type='text/javascript' src='js/jquery_1.7.2.min.js'></script>
+
+
+
+
+What is chaining in jQuery?
+
+Ans: Chaining is one of the most powerful feature of jQuery. In jQuery, Chaining means to connect multiple functions, events on selectors. It makes your code short and easy to manage and it gives better performance. The chain starts from left to right. So left most will be called first and so on.
+ Collapse | Copy Code
+​$(document).ready(function(){
+    $('#dvContent').addClass('dummy');
+    $('#dvContent').css('color', 'red');
+    $('#dvContent').fadeIn('slow');
+});​
+
+
+
+
+. What are various methods to make ajax request in jQuery?
+
+Ans: Using below jQuery methods, you can make ajax calls.
+load() : Load a piece of html into a container DOM
+$.getJSON(): Load JSON with GET method.
+$.getScript(): Load a JavaScript file.
+$.get(): Use to make a GET call and play extensively with the response.
+$.post(): Use to make a POST call and don't want to load the response to some container DOM.
+$.ajax(): Use this to do something on XHR failures, or to specify ajax options (e.g. cache: true) on the fly.
+
+
+
+
+ Is there any advantage of using $.ajax() for ajax call against $.get() or $.post()?
+
+Ans: By using jQuery post()/ jQuery get(), you always trust the response from the server and you believe it is going to be successful all the time. Well, it is certainly not a good idea to trust the response. As there can be n number of reason which may lead to failure of response.
+
+
+
+How do you check or uncheck a checkbox input or radio button?
+Answers : 8
+There are two ways to check or uncheck a checkbox or radio button.
+Set the 'checked' attribute to true or false.
+ // Check #pcds
+ $('#pcds').attr('checked', true);
+ // Uncheck #pcds
+ $('#pcds').attr('checked', false);
+Add or remove the 'checked' attribute:
+ // Check #pcds
+ $("#pcds").attr('checked', 'checked');
+ // Uncheck #pcds
+ $("#pcds").removeAttr('checked');
+
+
+
+
+
+ How do you get the text value of a selected option?
+Answers : 9
+Select elements typically have two values that you want to access. First there's the value to be sent to the server, which is easy:
+ $("#pcdsselect").val();
+ // => 1
+The second is the text value of the select. For example, using the following select box:
+ <select id="pcdsselect">
+
+   <option value="1">Mr</option>
+   <option value="2">Mrs</option>
+   <option value="3">Ms</option>
+   <option value="4">Dr</option>
+
+   <option value="5">Prof</option>
+ </select>
+If you wanted to get the string "Mr" if the first option was selected (instead of just "1"), you would do that in the following way:
+ $("#mpcdsselect option:selected").text();
+ // => "Mr"

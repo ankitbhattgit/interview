@@ -1,0 +1,283 @@
+
+
+Framework is a set of libraries on the basis of what you can build any application , no need to re-invent the wheel.
+
+
+
+Codeigniter is open source , web application framework.Its is for building websites using php.Codeigniter is loosely based on MVC pattern.
+Codeigniter was developed bt ellislab Inc.
+
+
+
+.Why codeigniter is called as loosely based mvc framework?
+
+Reason behind this is we does not need to follow strict mvc pattern while creating application.We can also able to build with model only view and controllers are enough to built a application.
+
+
+What are helpers?
+
+It is a group of functions which helps you to do particular functions. Example there are form helper to create a form .$this->load->helper(‘form’);
+$this->load->helper('name');
+
+5.What are hooks in codeigniter?
+
+Hooks are used to modify the inner functionality of framework without affecting core files.Hooks are present in application/config/hooks.php
+  $hook['pre_controller'] = array(
+            'class'    => 'MyClass',
+            'function' => 'Myfunction',
+            'filename' => 'Myclass.php',
+            'filepath' => 'hooks',
+            'params'   => array('param1', 'param2', 'param3')
+   );
+
+
+What is the current version of codeigniter?
+
+Version: 3.0.1
+
+7.what is the speciality of codeigniter over other frameworks?
+
+Codeigniter is known for its speed.It is faster lighter than any other framework. Excelent documentation.
+
+  7. Full Featured database classes with support for several platforms,Security and XSS Filtering,Error Logging.
+
+
+
+
+ Explain Application Flow Chart in codeigniter?
+
+
+ The index.php serves as the front controller, initializing the base resources needed to run CodeIgniter.
+ The Router examines the HTTP request to determine what should be done with it.
+If a cache file exists, it is sent directly to the browser, bypassing the normal system execution.
+ Security. Before the application controller is loaded, the HTTP request and any user submitted data is filtered for security.
+The Controller loads the model, core libraries, helpers, and any other resources needed to process the specific request.
+The finalized View is rendered then sent to the web browser to be seen. If caching is enabled, the view is cached first so that on subsequent requests it can be served.
+
+
+
+
+Explain MVC in Codeigniter?
+
+CodeIgniter is based on the Model-View-Controller development pattern. MVC is a software approach that separates application logic from presentation. In practice, it permits your web pages to contain minimal scripting since the presentation is separate from the PHP scripting.
+
+The Model represents your data structures. Typically your model classes will contain functions that help you retrieve, insert, and update information in your database.
+The View is the information that is being presented to a user.
+A View will normally be a web page, but in CodeIgniter, a view can also be a page fragment like a header or footer. It can also be an RSS page, or any other type of "page".
+The Controller serves as an intermediary between the Model, the View, and any other resources needed to process the HTTP request and generate a web page.
+
+
+
+How you will load an model in codeigniter?
+$this->load->model('Modelname');
+
+
+
+How you will use or add codeigniter libraries?
+
+All of the available libraries are located in your system/libraries folder. In most cases, to use one of these classes involves initializing it within a controller using the following initialization function:-
+
+1	$this->load->library('class name');
+
+
+
+How you will work with error handling in codeigniter?
+
+CodeIgniter lets you build error reporting into your applications using the functions:-
+
+1. show_error():- This function will display the error message supplied to it using template application/errors/error_general.php.
+
+2. show_404() :- Function will display the 404 error message.
+
+3. log_message(‘level’, ‘message’) :- This function lets you write messages to your log files. You must supply one of three “levels” in the first parameter, indicating what type of message it is (debug, error, info), with the message itself in the second parameter.
+
+
+
+Explain routing in Codeigniter?
+
+In CodeIgniter, the way PHP files served is different rather than accessing it directly from the browser. This process is called routing. Routing in CodeIgniter gives you freedom to customize the default URL pattern to use our own URL pattern according to the requirement. So, whenever there is a request made and matches our URL pattern it will automatically direct to the specified controller and  function.
+
+6) Why is there a need to configure the URL routes?
+
+Changing the URL routes has some benefits like
+
+From SEO point of view, to make URL SEO friendly and get more user visits
+Hide some URL element such as a function name, controller name, etc. from the users for security reasons
+Provide different functionality to particular parts of a system
+
+7) List out different types of hook point in Codeigniter?
+
+Different types of hook point in Codeigniter includes
+
+post_controller_constructor
+pre_controller
+post_sytem
+pre_system
+cache_override
+display_override
+post_controller
+
+
+8) Mention what are the security parameter for XSS in CodeIgniter?
+
+Codeigniter has got a cross-site scripting hack prevention filter. This filter either runs automatically or you can run it as per item basis, to filter all POST and COOKIE data that come across.
+
+
+10) Explain what is inhibitor in CodeIgniter?
+
+For CodeIgniter, inhibitor is an error handler class, using the native PHP functions like set_exception_handler, set_error_handler, register_shutdown_function to handle parse errors, exceptions, and fatal errors.
+
+
+
+
+11) Mention what is the default URL pattern used in Codeigniter framework?
+
+Codeigniter framework URL has four main components in default URL pattern.  First we have the server name and next we have the controller class name followed by controller function name and function parameters at the end. Codeigniter can be accessed using the URL helper. For example http://servername/controllerName/controllerFunction/parameter1/parameter2.
+
+12) Explain how you can extend the class in Codeigniter?
+
+To extend the native input class in CodeIgniter, you have to build a file named application/core/MY_Input.php and declare your class with
+
+Class MY_Input extends CI_Input {
+
+}
+
+
+14) Explain how you can enable CSRF (Cross Site Request Forgery) in CodeIgniter?
+
+You can activate CSRF (Cross Site Request Forgery) protection in CodeIgniter by operating your application/config/config.php file and setting it to
+
+$config [ ‘csrf_protection’] = TRUE;
+
+
+How to access config variable in codeigniter?
+$this->config->item('variable name');
+
+
+Question: How to unset session in codeigniter?
+ $this->session->unsetuserdata('somename');;
+
+
+Question: How do you get last insert id in codeigniter?
+ $this->db->insertid();;
+
+ How to print SQL statement in codeigniter model??
+ $this->db->lastquery();;
+
+
+  How to unset session in codeigniter?
+We can use unsetuserdata to destroy particular session variable
+
+  this->session->unset_userdata('somename');
+
+We can use sessdestroy to destroy all session:
+
+  $this->session->sess_destroy();
+
+
+
+<div id="paging_content" class="radius"><div><h1 class="header-text"><a href="/web/Codelgnitor/5/"><p>
+	How do I do a COUNT(‘foo’) using the Active Record functions?</p></a></h1></div><div><h1 class="header-text"><p>
+	You need to use the SQL AS feature, where you assign a new name to a piece of data, viz:</p><p><em>$this-&gt;db-&gt;select("COUNT('foo') AS foo_count", FALSE);<br>
+	// Run your query, and then use the foo_count variable. &nbsp;</em></p></h1></div></div>
+
+
+
+
+	<div id="paging_content" class="radius"><div><h1 class="header-text"><a href="/web/Codelgnitor/8/"><p>
+	How do I find out the ID of the row I just inserted?</p></a></h1></div><div><h1 class="header-text"><p>
+	This is covered in the Query Helper Functions section of the CI User Guide - the function you’re looking for is:</p><p><em>$foo = $this-&gt;db-&gt;insert_id(); &nbsp;</em></p></h1></div></div>
+
+
+
+	<div id="paging_content" class="radius"><div><h1 class="header-text"><a href="/web/Codelgnitor/9/"><p>
+	How can I tell if an UPDATE was successful, or how many rows were updated?</p></a></h1></div><div><h1 class="header-text"><p>
+	The AR Helpers page suggests this construct will work for you:</p><p><em>$x = $this-&gt;db-&gt;affected_rows();</em></p><p>
+	Consulting the PHP.net documentation for mysql_affected_rows() provides some cautionary words for MySQL users. Specifically:&nbsp;</p></h1></div></div>
+
+
+
+	<div id="paging_content" class="radius"><div><h1 class="header-text"><a href="/web/Codelgnitor/11/"><p>
+	How do I see the actual raw SQL query generated by CI’s Active Record</p></a></h1></div><div><h1 class="header-text"><p><strong>Answer 1</strong><br>
+	Turn on profiling (part of the benchmarking class) - this will show the full detail of all the SQL queries for the page.</p><p><strong>Answer 2</strong><br>
+	You can do this before your query:</p><p><em>$this-&gt;db-&gt;_compile_select();</em></p><p>
+	.. and then this, once you’ve run the query:</p><p><em>$this-&gt;db-&gt;last_query(); &nbsp;</em></p></h1></div></div>
+
+
+
+	<div id="paging_content" class="radius"><div><h1 class="header-text"><a href="/web/Codelgnitor/12/"><p>
+	How do I find out the ID of the row I just inserted?</p></a></h1></div><div><h1 class="header-text"><p>
+	This is covered in the Query Helper Functions section of the CI User Guide - the function you’re looking for is:</p><p><em>$foo = $this-&gt;db-&gt;insert_id(); &nbsp;</em></p></h1></div></div>
+
+
+
+	<div id="paging_content" class="radius"><div><h1 class="header-text"><a href="/web/Codelgnitor/13/"><p>
+	How do I do a COUNT(‘foo’) using the Active Record functions?</p></a></h1></div><div><h1 class="header-text"><p>
+	You need to use the SQL AS feature, where you assign a new name to a piece of data.<br>
+	For example:</p><p><em>$this-&gt;db-&gt;select("COUNT('foo') AS foo_count", FALSE);<br>
+	// Run your query, and then use the foo_count variable. &nbsp;</em></p></h1></div></div>
+
+
+
+
+
+	<div id="paging_content" class="radius"><div><h1 class="header-text"><a href="/web/Codelgnitor/22/"><p>
+	Is there a way to cycle $this-&gt;input-&gt;post() items?</p></a></h1></div><div><h1 class="header-text"><p>
+	There are no CodeIgniter functions to do this, but you can accomplish this easily with a construct such as this one. The result of this function is a $safe_post_array that contains all posted data that has passed your own Input Class rules.</p><p><em>foreach (array_keys($_POST) as $key) {<br>
+	&nbsp; &nbsp;$safe_post_array[$key] = $this-&gt;input-&gt;post($key);<br>
+	&nbsp; &nbsp;}</em></p><p>
+	You can also do something neat like this, if you want to pull all the data out of $_POST into your own array, cleaning it as it comes across:</p><p><em>$data['fields'] = xss_clean($_POST); &nbsp;</em></p></h1></div></div>
+
+
+
+
+
+	<div id="paging_content" class="radius"><div><h1 class="header-text"><a href="/web/Codelgnitor/23/"><p>
+	When I load an image in my code, it doesn’t appear on the rendered page?</p></a></h1></div><div><h1 class="header-text"><p>
+	This is a hugely common problem, and 99 times out of ten it’s because you are confused about paths. This is very much a PHP / HTML problem, not a CodeIgniter one, but the following hints might help you resolve this.</p><p><strong>First</strong> - look at the page source in your browser - this is the <strong>most important and most useful thing</strong> you can examine. It’ll give you very strong hints immediately as to what’s going wrong. You can cut-n-paste the img src component into another browser, and then start modifying it until you find a path that works.</p><p><strong>Second</strong> - utilise the CI helpers, if you’re not already. For example, if you keep your images at <strong>/assets/images</strong> then you can pull <strong>foo.jpg</strong> in with this code (modify to taste) in your view:</p><p><em>&lt;?php<br>
+	&nbsp; &nbsp; $foovar = "foo.jpg";<br>
+	&nbsp; &nbsp; $img_array = array ("src"=&gt; "/assets/images/". $foovar, "border"=&gt;"0");<br>
+	&nbsp; &nbsp; echo anchor (img($img_array));<br>
+	?&gt; &nbsp;</em></p></h1></div></div>
+
+
+
+
+
+	<div id="paging_content" class="radius"><div><h1 class="header-text"><a href="/web/Codelgnitor/28/"><p>
+	How do I find the name of the current controller and/or method?</p></a></h1></div><div><h1 class="header-text"><p>
+	There are standard PHP function that’s good for this kind of thing, and you’re encouraged to consult the PHP User Guide.</p><p><strong>get_class()</strong> will return the current class’s name.</p><p><strong>get_class_methods()</strong> will return the full list of methods for a given class.</p><p><br>
+	Alternatively, consult the URI Class in the user manual, paying particular attention to the <strong>rsegment()</strong> function - as you may be happy with pulling segment(1) for your class, and segment(2) for your method.</p><p><br>
+	Alternatively, you can query the CI Routing class directly, using these functions:</p><p><em>$this-&gt;router-&gt;class;<br>
+	$this-&gt;router-&gt;method; &nbsp;</em></p></h1></div></div>
+
+
+
+
+	<div id="paging_content" class="radius"><div><h1 class="header-text"><a href="/web/Codelgnitor/6/"><p>
+	How do I JOIN two tables, using AR, if both tables have a common column, eg. id?</p></a></h1></div><div><h1 class="header-text"><p>
+	If you JOIN two tables that share an identically named column, your result set will include only one column with that name.</p><p>
+	The simple answer is to use the AS feature, as described for the previous COUNT(‘foo’) AS foo_count question. This works best when you are SELECTING specific columns. For example:</p><p><em>$this-&gt;db-&gt;select ("foo.id AS foo_id, bar.id AS bar_id, ... ");</em></p><p><em>// Results will include: foo_id, bar_id</em></p><p>
+	In general terms you should strive to specify all your SELECT fields - it reduces load on the database and network, memory requirements, and (arguably) also contentions and bugs. SELECT(*) constructs are, by definition, heavier. However there are times when, for various reasons, you want to use a SELECT(*).</p><p>
+	You can work around the problem by redefining your AS casts after the SELECT(*) - these have been shown in separate function calls to highlight what we’re doing here.</p><p><em>// A select("*") is the assumed default, but ONLY ABSENT any other -&gt;select() calls</em></p><p><em>$this-&gt;db-&gt;select ("*");</em></p><p><em>// We now append the two renamed-using-AS 'id' fields<br>
+	$this-&gt;db-&gt;select ("foo.id AS foo_id");<br>
+	$this-&gt;db-&gt;select ("bar.id AS bar_id");</em></p><p><em>// We do the JOIN here, using whatever criteria you want<br>
+	$this-&gt;db-&gt;join ("bar", "bar.thing = foo.otherthing", "LEFT");</em></p><p><em>// Initiate the actual database query<br>
+	$query = $this-&gt;db-&gt;get ("foo");</em></p><p><br><em>// The result_array() output from this would look like:<br>
+	Array<br>
+	(<br>
+	[0] =&gt; Array<br>
+	(<br>
+	[id] =&gt; 27 // This SHOULD BE IGNORED (it's *probably* = bar.id)<br>
+	[name] =&gt; Brian<br>
+	[email] =&gt; brian@life.of<br>
+	. . .<br>
+	[foo_id] =&gt; 42 // We use and trust this field<br>
+	[bar_id] =&gt; 27 // We use and trust this field<br>
+	)</em></p><p><em>[1] =&gt; Array<br>
+	(<br>
+	. . . </em></p><p>
+	To clarify:<br>
+	1. The <strong>[id]</strong> field should be ignored - the contents is predictable, as it will reflect the most recent JOINed table with an id column - but using it will inspire ambiguity. We basically just discard it for the sake of coding consistency and clarity.<br>
+	2. The <strong>[foo_id]</strong> and <strong>[bar_id]</strong> fields are what we rely on here.<br>
+	3. You only need to do this trick - forcing the first SELECT(”*”), with subsequent <strong>AS</strong> constructs - when you do not know what specific fields you should SELECT - but this should be an exceptional, rather than your normal use case.&nbsp;</p></h1></div></div>
